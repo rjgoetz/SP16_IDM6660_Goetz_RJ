@@ -33,9 +33,9 @@ h1, h2, h3, h4, h5, h6, aside ol {
 /* STUDENT STYLES */
 
 body {
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
-  padding: 15px 10px 60px 10px;
+  padding: 20px 1.04166667% 60px; /* 10px / 960px */
   color: #333333;
 }
 
@@ -61,7 +61,6 @@ h1, h2 {
 
 header {
   background-color: #eeeeee;
-  height: 270px;
 }
 
 header h1 {
@@ -73,29 +72,30 @@ header h1 {
 }
 
 header ul {
-  width: 470px;
+  width: 50%; /* 470px / 940px */
   margin: 0 auto;
   text-align: center;
   font-size: 0.9em;
+  padding-bottom: 80px;
 }
 
 header ul li {
   display: inline-block;
-  padding-right: 12px;
+  padding-right: 2.553191489%; /* 12px / 470px */
 }
 
 /* SECTION */
 
 section {
   padding-top: 80px;
-  padding-right: 85px;
-  width: 75%;
+  padding-right: 9.042553191489%; /* 85px / 940px */
+  width: 75%; /* = 705px */
   float: left;
 }
 
 section h1 {
   font-size: 3.35em;
-  padding-right: 20px;
+  padding-right: 3.2258064516%; /* 20px / (705px - 85px = 620px) */
 }
 
 section h2 {
@@ -144,10 +144,10 @@ section img {
 /* ASIDE */
 
 aside {
-  width: 25%;
+  width: 25%; /* = 235px */
   float: left;
   padding-top: 75px;
-  padding-left: 15px;
+  padding-left: 1.59574468085%; /* 15px / 940px */
 }
 
 aside img {
