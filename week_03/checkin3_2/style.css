@@ -1,0 +1,164 @@
+/* style.css */
+
+
+
+body {
+  font: 18px / 1.5 Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+  color: #1a1a1a;
+}
+
+.wrapper {
+  width: 94%;
+  margin: 3em auto;
+}
+
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+a:hover {
+  border-bottom: 2px solid #1a1a1a;
+}
+
+header h1 {
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 1.5em;
+}
+
+header h1 a {
+  color: #ff3333;
+  font-size: 2em;
+}
+
+header ul {
+  list-style-type: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  padding: 0;
+}
+
+header ul li {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+section h2 {
+  display: none;
+}
+
+section ul {
+  padding-left: 1em;
+}
+
+section ul li {
+  margin-bottom: 0.75em;
+}
+
+article {
+  margin-top: 2em;
+}
+
+aside {
+  margin-top: 2em;
+  background-color: #eeeeee;
+  padding: 1em;
+  border-top: 1px solid #1a1a1a;
+}
+
+aside h2 {
+  font-size: 1.25em;
+  line-height: 1;
+  margin: 0;
+}
+
+aside ul {
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 0.75em;
+  list-style-type: none;
+}
+
+aside ul li span {
+  font-style: italic;
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+@media screen and (min-width: 540px) {
+  header ul li {
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 96%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  section > p {
+    font-size: 1.2em;
+  }
+
+  article {
+    width: 45%;
+    float: left;
+    padding-right: 5%;
+    margin-bottom: 1.5em;
+  }
+
+  aside {
+    clear: both;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
+  header h1 {
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  section {
+    float: left;
+    width: 75%;
+  }
+
+  section > p {
+    font-size: 1.2em;
+    padding-right: 3em;
+  }
+
+  article {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  aside {
+    width: 20%;
+    float: right;
+    padding: 2.5%;
+    clear: none;
+  }
+
+
+}
