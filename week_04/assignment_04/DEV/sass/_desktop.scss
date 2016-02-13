@@ -1,0 +1,223 @@
+/* SIMPLE RESET */
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	margin:0;
+	padding:0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* FONT STYLES */
+
+html, aside ol li:nth-of-type(2) {
+
+	font-family: 'Merriweather', serif;
+	font-size: 16px;
+	line-height: 1.125em;
+
+}
+
+h1, h2, h3, h4, h5, h6, aside ol {
+
+	font-family: 'Oswald', sans-serif;
+
+}
+
+/** STUDENT STYLES **/
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 1.04166667% 60px; /* 10px / 960px */
+  color: #333333;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2 {
+  line-height: 1;
+}
+
+/* HEADER */
+
+header {
+  background-color: #eeeeee;
+}
+
+header h1 {
+  text-transform: uppercase;
+  font-size: 4.5em;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+header ul {
+  width: 50%; /* 470px / 940px */
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9em;
+  padding-bottom: 80px;
+}
+
+header ul li {
+  display: inline-block;
+  padding-right: 2.553191489%; /* 12px / 470px */
+}
+
+/* SECTION */
+
+section {
+  padding-top: 80px;
+  padding-right: 9.042553191489%; /* 85px / 940px */
+  width: 75%; /* = 705px */
+  float: left;
+}
+
+section h1 {
+  font-size: 3.35em;
+  padding-right: 3.2258064516%; /* 20px / (705px - 85px = 620px) */
+}
+
+section h2 {
+  position: relative;
+  padding-top: 67px;
+  font-size: 3em;
+  padding-bottom: 15px;
+}
+
+section h2 span {
+  font-size: 0.65em;
+  font-weight: 300;
+}
+
+section h2 span:first-of-type {
+  position: absolute;
+  top: 142px;
+  left: 20px;
+  background-color: orange;
+  color: #ffffff;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  padding-top: 35px;
+  padding-left: 22px;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  box-shadow: 6px 6px 28px -4px #333333;
+}
+
+section img {
+  display: block;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+section p {
+  padding-top: 12px;
+}
+
+/* ASIDE */
+
+aside {
+  width: 25%; /* = 235px */
+  float: left;
+  padding-top: 75px;
+  padding-left: 1.59574468085%; /* 15px / 940px */
+}
+
+aside img {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+aside li {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.25em;
+  list-style-position: inside;
+}
+
+aside li h1 {
+  font-size: 1.2em;
+}
+
+aside li:first-of-type {
+  padding-bottom: 6px;
+}
+
+aside ol li:nth-of-type(2) {
+  padding-bottom: 20px;
+  font-size: 0.9em;
+}
+
+aside ol li:nth-of-type(2) a {
+  font-size: 0.85em;
+}
+
+aside li img {
+  float: left;
+}
+
+/* FOOTER */
+
+footer {
+  padding-top: 122px;
+  clear: both;
+}
+
+footer:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+footer h1 {
+  font-size: 1.25em;
+}
+
+footer p {
+  font-size: 0.8em;
+  padding-top: 4px;
+  padding-bottom: 30px;
+}
+
+footer nav, footer ol {
+  width: 33.3333%;
+  float: left;
+}
+
+footer ol h2 {
+  font-size: 1em;
+  padding-bottom: 4px;
+}
+
+footer ol li {
+  list-style-position: inside;
+}
