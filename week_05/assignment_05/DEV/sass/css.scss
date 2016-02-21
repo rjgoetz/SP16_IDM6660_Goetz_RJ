@@ -1,0 +1,228 @@
+/* VARIABLES */
+
+$font-stack: 'Open Sans', sans-serif;
+$orange: #f89a1e;
+$lt-orange: #ffdcae;
+$lt-grey: #f8f8f8;
+$dk-grey: #333333;
+$white: #ffffff;
+
+/* GLOBAL */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font: 400 14px/1.5 $font-stack;
+  color: $dk-grey;
+  width: 100%;
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  nav {
+    padding: 5px 3.125% 0;
+    a {
+      font-weight: 700;
+      color: $dk-grey;
+      text-transform: uppercase;
+    }
+    li {
+      width: 50%;
+      padding: 5px 0;
+      &:first-of-type {
+        float: left;
+        a {
+          padding-left: 16.5%;
+          background: url('../img/phone.png') no-repeat left center;
+        }
+      }
+      &:last-of-type {
+        float: right;
+        text-align: right;
+        a {
+          padding-right: 14.5%;
+          background: url('../img/map-icon.png') no-repeat right top;
+        }
+      }
+    }
+  }
+  h1 {
+    height: 140px;
+    width: 100%;
+    margin: 5px 0 0;
+    top: 32px;
+    background:
+      url('../img/hams-logo.png') no-repeat center center,
+      url('../img/checkers.png') no-repeat center 69px,
+      $lt-orange;
+    background-size: contain;
+      a {
+        display: block;
+        width: 33.3333%;
+        height: 100%;
+        margin: auto;
+      }
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* ORDER ONLINE */
+
+section {
+  h2 {
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+    height: 70px;
+    font: 800 italic 1.5em/1.2 $font-stack;
+    text-transform: uppercase;
+    background: url('../img/arrow.png') no-repeat center bottom;
+  }
+
+  form {
+    width: 75%;
+    margin: 20px auto 0;
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid $orange;
+      padding-left: 3.125%;
+      font: 700 italic 1em/1.2 $font-stack;
+    }
+    ul li {
+      width: 45%;
+      height: 40px;
+      margin-top: 20px;
+      &:first-of-type {
+        float: left;
+      }
+      &:last-of-type {
+        float: right;
+      }
+      a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 8px;
+        background: $orange;
+        color: $white;
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* NAV */
+
+  nav {
+    margin-top: 30px;
+    li {
+      text-align: center;
+      a {
+        display: block;
+        background: $lt-orange;
+        color: $dk-grey;
+        width: 100%;
+        height: 40px;
+        padding-top: 10px;
+        margin-bottom: 8px;
+        font: 800 italic 1.14em/1.2 $font-stack;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background:
+    url('../img/checkers.png') no-repeat bottom center,
+    $lt-grey;
+  background-size: contain;
+  div {
+    width: 47.5%;
+    float: left;
+    padding-left: 2.5%;
+
+    address {
+      font: 400 0.75rem/1.5 $font-stack;
+      span {
+        display: block;
+        padding-bottom: 10px;
+        &:first-of-type {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  img {
+    display: block;
+    width: 45%;
+    float: right;
+    padding-right: 2.5%;
+    padding-top: 5px;
+  }
+  nav {
+    clear: both;
+    padding-top: 5px;
+    li {
+      padding-left: 5%;
+      height: 36px;
+      display: inline-block;
+      &:last-of-type {
+        padding-left: 10%;
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $orange;
+        font-size: 2.5em;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    font: 400 0.75rem/1.5 $font-stack;
+    padding-top: 10px;
+  }
+}
