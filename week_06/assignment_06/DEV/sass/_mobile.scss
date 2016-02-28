@@ -1,0 +1,241 @@
+/* ASIDE */
+aside {
+			  display: none;
+}
+/* HEADER */
+header {
+				position: relative;
+				nav {
+								&>a {
+												float: left;
+												display: block;
+												color: $orange;
+												font-size: 2em;
+												padding: 0 3.125%;
+												&:last-of-type {
+																float: right;
+												}
+								}
+								ul {
+												width: 100%;
+												clear: both;
+												display: none;
+												margin-bottom: 50px;
+												a {
+																display: block;
+																position: relative;
+																right: 3.125%;
+																background: $lt-orange;
+																color: $dk-grey;
+																width: 106.25%;
+																height: 40px;
+																padding-top: 10px;
+																margin-bottom: 8px;
+																font: 700 1em/1.2 $font-stack;
+																text-transform: uppercase;
+																text-align: center;
+												}
+								}
+				}
+				h1 {
+								position: relative;
+								width: 140px;
+								margin: 0 auto;
+								a {
+												img {
+																display: block;
+																position: absolute;
+																top: -40px;
+																width: 140px;
+																margin: 0 auto;
+												}
+								}
+				}
+}
+/* HERO IMAGE */
+main {
+				margin-top: 50px;
+				background: url('../img/checkers.png') repeat;
+}
+section {
+        padding-top: 15px;
+        img {
+          display: block;
+          width: 100%;
+          padding-bottom: 15px;
+        }
+}
+
+/* ORDER ONLINE */
+
+article:first-of-type {
+  width: 90%;
+  margin: 0 auto;
+  background: #fff;
+  h2 {
+          margin: 0;
+          text-align: center;
+          padding: 15px 0;
+          height: 70px;
+          font: 800 italic 1.5em/1.2 $font-stack;
+          text-transform: uppercase;
+          background: url('../img/arrow.png') no-repeat center bottom;
+  }
+  form {
+          padding: 0 7.5%;
+          margin: 20px auto 0;
+          div {
+              margin: 15px auto;
+              width: 60%;
+              span {
+              font: 700 1em/1.2 $font-stack;
+            }
+						i {
+							margin-right: 10px;
+						}
+          }
+          input[type="radio"] {
+            display: none;
+            margin-left: 10px;
+          }
+          input[type="email"] {
+            width: 100%;
+            height: 40px;
+            border: 2px solid $orange;
+            padding-left: 3.125%;
+            font: 700 italic 1em/1.2 $font-stack;
+          }
+
+          ul li {
+                  width: 45%;
+                  height: 40px;
+                  margin-top: 20px;
+                  &:first-of-type {
+                          float: left;
+                  }
+                  &:last-of-type {
+                          float: right;
+                  }
+                  a {
+                          display: block;
+                          text-align: center;
+                          width: 100%;
+                          height: 100%;
+                          padding-top: 8px;
+                          background: $orange;
+                          color: $white;
+                          font-weight: 700;
+                  }
+          }
+          a {
+            display: block;
+            position: relative;
+            margin: 30px auto;
+            background: $orange;
+            color: #fff;
+            width: 80%;
+            height: 40px;
+            padding-top: 10px;
+            margin-bottom: 8px;
+            font: 700 1em/1.2 $font-stack;
+            text-transform: uppercase;
+            text-align: center;
+          }
+  }
+  /* NAV */
+  nav {
+          margin-top: 30px;
+          li {
+                  text-align: center;
+                  a {
+                          display: block;
+                          background: $lt-orange;
+                          color: $dk-grey;
+                          width: 100%;
+                          height: 40px;
+                          padding-top: 10px;
+                          margin-bottom: 8px;
+                          font: 700 1em/1.2 $font-stack;
+                          text-transform: uppercase;
+                  }
+          }
+  }
+}
+
+/* SPECIALS */
+
+article:nth-of-type(2) {
+  display: none;
+}
+
+/* TOP 10 SANDWICHES */
+
+article:nth-of-type(3) {
+  display: none;
+}
+
+
+/* FOOTER */
+footer {
+				div {
+                position: relative;
+                background-color: $lt-grey;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                p {
+                  position: absolute;
+                  top: 60px;
+                  left: 20px;
+                  font-size: 2em;
+                  line-height: 1;
+                  margin: 0;
+                  text-align: left;
+                  a {
+                    color: $orange;
+                  }
+                }
+								address {
+												font: 400 1em/1.5 $font-stack;
+                        text-align: center;
+												span {
+																display: block;
+																padding-bottom: 15px;
+																&:first-of-type {
+                                        font-size: 1.14em;
+																				font-weight: 700;
+                                        font-style: italic;
+																}
+												}
+								}
+				}
+
+				nav {
+								clear: both;
+								padding-top: 5px;
+                float: left;
+                width: 33.3333%;
+                padding-left: 3.125%;
+								li {
+												height: 36px;
+												display: inline-block;
+												&:last-of-type {
+																padding-left: 10%;
+												}
+												a {
+																display: block;
+																width: 100%;
+																height: 100%;
+																color: $orange;
+																font-size: 2.5em;
+												}
+								}
+				}
+				p {
+								text-align: right;
+                float: right;
+                width: 66.6666%;
+								font: 400 0.75rem/1.5 $font-stack;
+								padding-top: 15px;
+                padding-right: 3.125%;
+				}
+}

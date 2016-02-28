@@ -1,0 +1,59 @@
+@media screen and (min-width: 481px) {
+    article:first-of-type {
+      float: left;
+      width: 60.41666%;
+      margin: 0 3.125%;
+      margin-bottom: 30px;
+      nav {
+        display: none;
+      }
+      form {
+        padding-bottom: 20px;
+      }
+    }
+
+    article:nth-of-type(2) {
+      float: right;
+      width: 30.2083333%;
+      height: (70 + 236)*1px;
+      background: $green;
+      margin-right: 3.125%;
+      display: initial;
+      border: 2px solid $white;
+      h2 {
+        color: $yellow;
+        text-align: center;
+        font-size: 1em;
+        padding-bottom: 10px;
+        span {
+          display: block;
+        }
+      }
+      ul {
+        color: $white;
+        margin-left: 30px;
+        list-style-type: disc;
+        font-size: 0.85em;
+        li {
+          padding-bottom: 10px;
+          padding-right: 3.125%;
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    footer {
+      div {
+        padding: 30px 0;
+        p {
+          font-size: 3em;
+          left: 100px;
+        }
+      }
+      & > p {
+        font-size: 0.85em;
+      }
+    }
+}

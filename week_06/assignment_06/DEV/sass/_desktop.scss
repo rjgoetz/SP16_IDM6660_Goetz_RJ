@@ -1,0 +1,65 @@
+@media screen and (min-width: 641px) {
+  body {
+    max-width: 960px;
+  }
+  header {
+    aside {
+      display: block;
+      background: $lt-orange;
+      height: 40px;
+      ul {
+        float: right;
+        padding-right: 3.125%;
+        font-size: 1.1em;
+        color: $white;
+        padding-top: 5px;
+        li {
+          display: inline-block;
+          margin-right: 15px;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+    nav {
+      float: right;
+      clear: both;
+      width: 67.41666%;
+      padding-top: 75px;
+      a {
+        display: none;
+      }
+      ul {
+        display: block;
+        font-size: 0.9em;
+        li {
+          float: left;
+          padding-right: 5%;
+          a {
+            background: $white;
+            &:hover {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+    h1 {
+      margin: 0;
+      padding: 10px 0 0 3.125%;
+      width: 23.2083333%;
+      a img {
+        position: static;
+        width: 160px;
+      }
+    }
+  }
+
+  main {
+    margin-top: 10px;
+  }
+}
