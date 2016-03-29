@@ -14,9 +14,12 @@ $("document").ready(function() {
     }
   })
 
-  $(".image-popup").magnificPopup({
-    type: "image",
-    closeOnContentClick: true
-  })
+  // Run magnific-popup on desktop only
+  if($("html").hasClass("no-touchevents")) {
+    $(".image-popup").magnificPopup({
+      type: "image",
+      closeOnContentClick: true
+    });
+  };
 
 });

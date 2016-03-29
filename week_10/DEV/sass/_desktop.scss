@@ -35,9 +35,6 @@
           width: 41.575663026521%;
           display: inline-block;
           box-shadow: none;
-          &:first-of-type {
-            display: none;
-          }
           a:first-of-type {
             display: block;
             box-shadow: 0 1px 3px $dk-grey;
@@ -79,11 +76,11 @@
       background: url("../images/nh-bg-md.png") no-repeat right -110px;
 
       h1 {
-        width: 58%;
+        width: 59%;
         text-align: right;
         margin: 0;
         a {
-          font-size: 6vmin;
+          font-size: 5.7vmin;
           span {
             position: static;
             font-size: 3vmin;
