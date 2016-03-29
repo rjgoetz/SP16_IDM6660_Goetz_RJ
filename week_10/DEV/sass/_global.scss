@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+  line-height: 36px;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1em;
+  height: 0.15em;
+  background: $lt-grey;
+  box-shadow:
+    0 0.25em 0 0 $lt-grey,
+    0 0.5em 0 0 $lt-grey;
+}
+
+.button {
+  display: block;
+  font-family: $button-type;
+  font-weight: 100;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  color: $white;
+  background: linear-gradient($lt-blue, $blue);
+  height: 40px;
+  width: 128px;
+  margin: 0 auto 2em;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 1px 3px $dk-grey;
+  border: 1px solid $lt-grey;
+  padding-top: 4px;
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+body {
+  color: $dk-grey;
+}

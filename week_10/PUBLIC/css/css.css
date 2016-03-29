@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Regular.ttf); }
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Italic.ttf);
+  font-style: italic; }
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Bold.ttf);
+  font-weight: bold; }
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-BoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "Sarpanch";
+  src: url(../fonts/Sarpanch-SemiBold.ttf);
+  font-weight: 100; }
+@font-face {
+  font-family: "Sarpanch";
+  src: url(../fonts/Sarpanch-Bold.ttf);
+  font-weight: 500; }
+@font-face {
+  font-family: "Sarpanch";
+  src: url(../fonts/Sarpanch-Black.ttf);
+  font-weight: 900; }
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+  line-height: 36px; }
+
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1em;
+  height: 0.15em;
+  background: #f1f1f3;
+  box-shadow: 0 0.25em 0 0 #f1f1f3, 0 0.5em 0 0 #f1f1f3; }
+
+.button {
+  display: block;
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 100;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: linear-gradient(#1e6ef6, #003fa9);
+  height: 40px;
+  width: 128px;
+  margin: 0 auto 2em;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 1px 3px #333333;
+  border: 1px solid #f1f1f3;
+  padding-top: 4px; }
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+body {
+  color: #333333; }
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Lato"; }
+
+header {
+  text-align: center;
+  height: 160px;
+  position: relative;
+  padding-top: 3em; }
+  header h1 {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    font-size: 1rem; }
+    header h1 a {
+      font: 900 2.1em/1 "Sarpanch", sans-serif;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 5px #333333;
+      color: #f6921e;
+      text-transform: uppercase;
+      text-decoration: none; }
+  header span {
+    position: absolute;
+    left: 175px;
+    display: block;
+    font: bold italic 0.5em/1 "Lato", sans-serif;
+    padding-top: 0.25em;
+    color: #ffffff;
+    text-transform: none; }
+  header nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #003fa9;
+    box-shadow: 0 1px 5px #333333;
+    z-index: 99; }
+    header nav ul ul li {
+      margin: 0 auto;
+      box-shadow: 0 1px 3px #333333;
+      display: none; }
+      header nav ul ul li a {
+        display: block;
+        width: 100%;
+        height: 40px;
+        text-decoration: none;
+        color: #003fa9;
+        background: #f1f1f3;
+        border-bottom: 1px solid #003fa9;
+        padding-top: 7px;
+        text-transform: uppercase; }
+      header nav ul ul li:last-of-type a {
+        border-bottom: none; }
+
+section {
+  background: #ffffff;
+  box-shadow: 0 -1px 5px #333333;
+  padding: 1.5em; }
+  section img {
+    width: 100%;
+    display: block;
+    box-shadow: 0 1px 3px #333333;
+    text-align: center; }
+  section h2 {
+    font-family: "Sarpanch", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    color: #003fa9; }
+  section h3 {
+    color: #003fa9;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 1.1em; }
+    section h3 span {
+      display: block;
+      font-weight: normal;
+      font-style: italic;
+      font-size: 0.85em;
+      color: #333333; }
+  section p {
+    margin-bottom: 1.5em; }
+  section ul {
+    padding-left: 1.5em; }
+    section ul li {
+      margin-bottom: 1.5em; }
+
+article {
+  margin-bottom: 3em;
+  border-bottom: 1px solid #f1f1f3; }
+
+footer p {
+  font-size: 0.8em;
+  padding: 0.85em 0;
+  text-align: center;
+  color: #ffffff; }
+
+.home {
+  background: url("../images/nh-bg-sm.png") no-repeat center -60px, url("../images/stars-sm.png") repeat, #003fa9; }
+  .home header {
+    padding-top: 2em; }
+  .home nav {
+    margin-top: 220px; }
+    .home nav ul {
+      list-style-type: none; }
+      .home nav ul li {
+        box-shadow: 0 -1px 5px #333333; }
+        .home nav ul li:first-of-type {
+          background: #003fa9;
+          font-family: "Sarpanch", sans-serif;
+          color: #ffffff;
+          font-size: 1.125em;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-align: center;
+          padding-top: 5px;
+          height: 40px; }
+        .home nav ul li:nth-of-type(2) {
+          box-shadow: none; }
+        .home nav ul li a:first-of-type {
+          display: block;
+          text-align: center;
+          line-height: 0; }
+          .home nav ul li a:first-of-type img {
+            width: 100%; }
+        .home nav ul li a:last-of-type {
+          color: #003fa9;
+          font-weight: 500;
+          width: 100%;
+          background: linear-gradient(#ffffff, #f1f1f3);
+          margin-bottom: 1.5em; }
+
+.page {
+  background: url("../images/nh-header-sm.png") no-repeat -280px -20px, url("../images/stars-sm.png") repeat, #003fa9; }
+  .page nav {
+    display: none; }
+  .page header nav {
+    display: block; }
+  .page .top-button {
+    display: none; }
+
+@media screen and (min-width: 481px) {
+  body {
+    font-size: 18px; }
+
+  header {
+    padding-top: 1.5em;
+    height: 230px; }
+    header h1 {
+      width: 480px; }
+      header h1 a {
+        font-size: 3.5em; }
+    header span {
+      left: 262px; }
+
+  section h2 {
+    clear: both; }
+
+  .home {
+    background: url("../images/nh-bg-md.png") no-repeat center 10px, url("../images/stars-md.png") repeat, #003fa9; }
+    .home nav {
+      margin-top: 160px; }
+
+  .page {
+    background: url("../images/nh-header-md.png") no-repeat -240px -90px, url("../images/stars-sm.png") repeat, #003fa9; }
+    .page header nav {
+      display: none; }
+    .page nav {
+      display: block;
+      height: 38px;
+      box-shadow: 0 -1px 5px #333333; }
+      .page nav ul {
+        list-style-type: none;
+        padding: 0; }
+        .page nav ul li {
+          float: left;
+          width: 50%;
+          text-align: center;
+          margin: 0;
+          background: linear-gradient(#ffffff, #f1f1f3);
+          border-top: 2px solid #ffffff; }
+          .page nav ul li a {
+            text-decoration: none;
+            height: 36px;
+            display: block;
+            width: 100%;
+            padding-top: 4px;
+            color: #003fa9; }
+            .page nav ul li a:hover {
+              color: #1e6ef6; }
+    .page .button {
+      width: 150px; }
+    .page > div:last-of-type {
+      display: none; }
+
+  .no-touchevents .page > div:last-of-type {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 3em;
+    line-height: 1;
+    font-weight: bold; }
+    .no-touchevents .page > div:last-of-type .top-button {
+      display: block;
+      padding: 0 8px;
+      width: 100%;
+      height: 1.25em;
+      text-decoration: none;
+      background: linear-gradient(#ffffff, #f1f1f3);
+      color: #003fa9;
+      box-shadow: 0 1px 3px #333333; } }
+@media screen and (min-width: 641px) {
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto; }
+
+  .home {
+    background: url("../images/nh-bg-md.png") no-repeat center 50px, url("../images/stars-md.png") repeat, #003fa9; }
+    .home header {
+      padding-top: 3em; }
+      .home header h1 {
+        width: 80%;
+        text-align: right;
+        margin: 0; }
+        .home header h1 a {
+          font-size: 7.3vmin; }
+      .home header span {
+        position: static; }
+    .home nav {
+      padding: 190px 0;
+      width: 75%;
+      margin: 0 auto; }
+      .home nav ul li {
+        margin-right: 8.424336973479%;
+        width: 41.575663026521%;
+        display: inline-block;
+        box-shadow: none; }
+        .home nav ul li:first-of-type {
+          display: none; }
+        .home nav ul li a:first-of-type {
+          display: block;
+          box-shadow: 0 1px 3px #333333;
+          background: #ffffff;
+          margin-bottom: 1.5em; }
+        .home nav ul li:last-of-type {
+          margin-right: 0; }
+        .home nav ul li img {
+          width: 100%;
+          display: block;
+          padding: 2.808112324493%; }
+
+  .page {
+    background: url("../images/stars-md.png") repeat, #003fa9; }
+    .page .right {
+      width: 47.191887675507%;
+      float: right;
+      padding: 0 0 5.616224648986% 5.616224648986%; }
+      .page .right p {
+        margin-bottom: 0; }
+    .page .left {
+      width: 47.191887675507%;
+      float: left; }
+    .page header {
+      padding-top: 3em;
+      background: url("../images/nh-bg-md.png") no-repeat right -110px; }
+      .page header h1 {
+        width: 58%;
+        text-align: right;
+        margin: 0; }
+        .page header h1 a {
+          font-size: 6vmin; }
+          .page header h1 a span {
+            position: static;
+            font-size: 3vmin; }
+    .page nav {
+      box-shadow: none;
+      padding: 0 2.808112324493%; }
+    .page section {
+      box-shadow: 0 3px 6px #333333;
+      margin: 0 2.808112324493%;
+      padding: 3em; }
+
+  .no-cssvminunit .home header h1 a {
+    font-size: 3.5em; }
+  .no-cssvminunit .page header h1 a {
+    font-size: 2.6em; }
+    .no-cssvminunit .page header h1 a span {
+      font-size: 0.5em; } }
+
+/*# sourceMappingURL=css.css.map */
