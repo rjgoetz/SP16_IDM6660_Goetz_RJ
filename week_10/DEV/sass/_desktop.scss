@@ -1,0 +1,117 @@
+@media screen and (min-width: 641px) {
+
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .home {
+    background:
+      url("../images/nh-bg-md.png") no-repeat center 50px,
+      url("../images/stars-md.png") repeat,
+      $blue;
+
+    header {
+      padding-top: 3em;
+      h1 {
+        width: 80%;
+        text-align: right;
+        margin: 0;
+        a {
+          font-size: 7.3vmin;
+        }
+      }
+      span {
+        position: static;
+      }
+    }
+    nav {
+      padding: 190px 0;
+      width: 75%;
+      margin: 0 auto;
+      ul {
+        li {
+          margin-right: 8.424336973479%;
+          width: 41.575663026521%;
+          display: inline-block;
+          box-shadow: none;
+          a:first-of-type {
+            display: block;
+            box-shadow: 0 1px 3px $dk-grey;
+            background: $white;
+            margin-bottom: 1.5em;
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+          img {
+            width: 100%;
+            display: block;
+            padding: 2.808112324493%;
+          }
+        }
+      }
+    }
+  }
+
+  .page {
+    background:
+      url("../images/stars-md.png") repeat,
+      $blue;
+
+    .right {
+      width: 47.191887675507%;
+      float: right;
+      padding: 0 0 5.616224648986% 5.616224648986%;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .left {
+      width: 47.191887675507%;
+      float: left;
+    }
+    header {
+      padding-top: 3em;
+      background: url("../images/nh-bg-md.png") no-repeat right -110px;
+
+      h1 {
+        width: 59%;
+        text-align: right;
+        margin: 0;
+        a {
+          font-size: 5.7vmin;
+          span {
+            position: static;
+            font-size: 3vmin;
+          }
+        }
+      }
+
+    }
+    nav {
+      box-shadow: none;
+      padding: 0 2.808112324493%;
+    }
+    section {
+      box-shadow: 0 3px 6px $dk-grey;
+      margin: 0 2.808112324493%;
+      padding: 3em;
+    }
+  }
+
+  // modernizr detects //
+
+  .no-cssvminunit {
+    .home header h1 a {
+      font-size: 3.5em;
+    }
+    .page header h1 a {
+      font-size: 2.6em;
+      span {
+        font-size: 0.5em;
+      }
+    }
+  }
+
+}
