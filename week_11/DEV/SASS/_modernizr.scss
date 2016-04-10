@@ -1,0 +1,9 @@
+.no-js {
+  section:first-of-type {
+    article:nth-of-type(2) {
+      background: url('../img/graph.png') no-repeat bottom center;
+      background-size: contain;
+      padding-bottom: 4.2em;
+    }
+  }
+}

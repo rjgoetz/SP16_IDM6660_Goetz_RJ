@@ -1,0 +1,192 @@
+/* Header Bar and Navigation */
+
+header {
+  @extend .clearfix;
+  nav {
+    background: $blue;
+    padding-top: 1.4em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    h1 {
+      @extend .visuallyhidden;
+    }
+    ul {
+      padding: 0;
+    }
+    & > ul {
+      height: 2.8em;
+      margin: 0;
+      position: relative;
+      width: 100%;
+      .fa {
+        color: $white;
+        float: right;
+        font-size: 1.4em;
+        margin-bottom: 1.4rem;
+        padding-right: 1.25rem;
+      }
+      li {
+        list-style-type: none;
+      }
+      ul {
+        clear: right;
+        display: none;
+        position: absolute;
+        top: 2.8em;
+        width: 100%;
+        li {
+          &:first-of-type {
+            border-bottom: 1px solid $lt-grey;
+          }
+          a {
+            background: $green;
+            color: $white;
+            display: block;
+            padding: 0.7em 0;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Introduction Page */
+
+main {
+  margin-top: 4.2em;
+}
+
+section:first-of-type {
+  h2 {
+    margin: 0;
+  }
+  article:first-of-type {
+    background: $blue;
+    h2 {
+      color: $white;
+      font-size: 2.1em;
+      line-height: 1;
+      padding: 4.2rem 0;
+      text-align: center;
+    }
+  }
+  article:nth-of-type(2) {
+    margin: 0 1.25em;
+    padding: 0 0 11.2em;
+    position: relative;
+    @extend .clearfix;
+    h2 {
+      color: $green;
+      font-size: 1.75em;
+      line-height: 1.25em;
+      padding: 4.2rem 0;
+      text-align: center;
+    }
+    div {
+      @extend .bar;
+    }
+  }
+}
+
+/* About Page */
+
+section:nth-of-type(2) {
+  article:first-of-type {
+    background: $lt-grey;
+    padding: 0 1.25em;
+    margin-top: 1.4em;
+    text-align: center;
+    h2, p {
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.75em;
+      line-height: 1.25em;
+      padding-top: 4.2rem;
+    }
+    p {
+      font-family: "JosefinSlab", serif;
+      font-size: 1.25em;
+      line-height: 1.7857em;
+      padding: 2.8rem 0 4.2rem;
+      a {
+        color: $green;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+  article:nth-of-type(2) {
+    padding: 0 1.25em 1.4em;
+    @extend .clearfix;
+    h3 {
+      font-size: 1.25em;
+      line-height: 1.7857em;
+      margin: 4.2rem 0 1.4rem;
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: 1.25em;
+    }
+    li {
+      font-size: 0.875em;
+      line-height: 1.6em;
+      margin-bottom: 1.4rem;
+      text-indent: -1.6em;
+    }
+    li:before {
+      color: $green;
+      content: "\25A0";
+      padding-right: 1em;
+    }
+  }
+}
+
+/* Contact Page */
+
+section:last-of-type {
+  article {
+    text-align: center;
+    h2 {
+      border-top: 1px solid $lt-grey;
+      font-size: 2.1em;
+      line-height: 1.3333em;
+      padding-top: 4.2rem;
+    }
+    p {
+      font-family: "JosefinSlab", serif;
+      font-size: 1.25em;
+      line-height: 1.7857em;
+      padding: 2.8rem 0 2.8rem;
+      a {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+  }
+  div {
+    height: 10em;
+    @extend .graph-paper;
+  }
+}
+
+/* Footer */
+
+footer {
+  background: $blue;
+  p {
+    color: $white;
+    font-size: 0.875em;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+  }
+}

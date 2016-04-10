@@ -1,0 +1,108 @@
+@media screen and (min-width: 415px) {
+  /* Introduction Page */
+
+  section:first-of-type {
+    article:first-of-type {
+      h2 {
+        font-size: 2.8em;
+        line-height: 1;
+        padding: 9.8rem 0;
+      }
+    }
+    article:nth-of-type(2) {
+      padding: 0 0 14em;
+      h2 {
+        font-size: 2.1em;
+        line-height: 1.3333em;
+        padding: 9.8rem 0;
+      }
+    }
+  }
+
+  /* About Page */
+
+  section:nth-of-type(2) {
+    article:first-of-type {
+      h2 {
+        font-size: 2.1em;
+        line-height: 1.3333em;
+        padding-top: 9.8rem;
+      }
+      p {
+        font-size: 1.6em;
+        line-height: 1.75em;
+        margin: 0 auto;
+        padding: 4.2rem 0 9.8rem;
+        width: 5 / 6 * 100%;
+      }
+    }
+    article:nth-of-type(2) {
+      div {
+        float: left;
+        padding-right: 28 / 728 * 100%;
+        width: 1 / 2 * 100%;
+        h3 {
+          font-size: 1.6em;
+          line-height: 1.75em;
+          margin-top: 2.8rem;
+        }
+        li {
+          font-size: 1em;
+          line-height: 1.4em;
+        }
+        &:first-of-type {
+          border-bottom: 1px solid $lt-grey;
+          float: none;
+          padding-right: 0;
+          text-align: center;
+          width: 100%;
+          h3 {
+            margin-top: 4.2rem;
+          }
+          ul {
+            padding: 0;
+          }
+          li {
+
+            text-indent: 0;
+            &:before {
+              content: " ";
+              padding-right: 0;
+            }
+            &:last-of-type {
+              margin-bottom: 2.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Contact Page */
+
+  section:last-of-type {
+    article {
+      h2 {
+        border-top: 1px solid $lt-grey;
+        font-size: 2.1em;
+        padding-top: 9.8rem;
+      }
+      p {
+        font-family: "JosefinSlab", serif;
+        font-size: 1.25em;
+        line-height: 1.7857em;
+        padding: 2.8rem 0 9.8rem;
+        a {
+          color: $green;
+          text-decoration: none;
+        }
+      }
+    }
+    div {
+      height: 30em;
+    }
+  }
+
+
+
+}

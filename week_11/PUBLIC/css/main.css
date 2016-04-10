@@ -1,0 +1,952 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+@font-face {
+  font-family: "JosefinSlab";
+  font-weight: normal;
+  src: url("../fonts/JosefinSlab-Regular.ttf"); }
+@font-face {
+  font-family: "JosefinSlab";
+  font-weight: bold;
+  src: url("../fonts/JosefinSlab-SemiBold.ttf"); }
+@font-face {
+  font-family: "OpenSans";
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Light.ttf"); }
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.5.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.fa-bars:before {
+  content: "\f0c9"; }
+
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  color: #1d2128;
+  font-size: 1em;
+  line-height: 1.4; }
+
+h1, h2, h3 {
+  font-family: "JosefinSlab", serif; }
+
+li, p {
+  font-family: "OpenSans", sans-serif; }
+
+.bar, section:first-of-type article:nth-of-type(2) div {
+  background: #f2f2f2;
+  bottom: 0;
+  box-shadow: 2px 0 2px 0px #d9d9d9;
+  position: absolute;
+  width: 8.57143%; }
+
+/* Graph Paper CSS // Credit Jim Warwick */
+.graph-paper, section:last-of-type div {
+  background-color: #ebebeb;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.7) 1px, transparent 1px), linear-gradient(transparent 3px, #ebebeb 3px, #ebebeb 38px, transparent 38px), linear-gradient(90deg, rgba(255, 255, 255, 0.7) 3px, transparent 3px, transparent 38px, rgba(255, 255, 255, 0.7) 38px);
+  background-size: 10px 10px, 40px 40px, 10px 10px, 40px 40px, 40px 40px, 40px 40px; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden, header nav h1 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active, header nav h1.focusable:active,
+.visuallyhidden.focusable:focus,
+header nav h1.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, header:before, section:first-of-type article:nth-of-type(2):before, section:nth-of-type(2) article:nth-of-type(2):before,
+.clearfix:after,
+header:after,
+section:first-of-type article:nth-of-type(2):after,
+section:nth-of-type(2) article:nth-of-type(2):after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after, header:after, section:first-of-type article:nth-of-type(2):after, section:nth-of-type(2) article:nth-of-type(2):after {
+  clear: both; }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+/* Header Bar and Navigation */
+header nav {
+  background: #0a377f;
+  padding-top: 1.4em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99; }
+  header nav ul {
+    padding: 0; }
+  header nav > ul {
+    height: 2.8em;
+    margin: 0;
+    position: relative;
+    width: 100%; }
+    header nav > ul .fa {
+      color: #ffffff;
+      float: right;
+      font-size: 1.4em;
+      margin-bottom: 1.4rem;
+      padding-right: 1.25rem; }
+    header nav > ul li {
+      list-style-type: none; }
+    header nav > ul ul {
+      clear: right;
+      display: none;
+      position: absolute;
+      top: 2.8em;
+      width: 100%; }
+      header nav > ul ul li:first-of-type {
+        border-bottom: 1px solid #f2f2f2; }
+      header nav > ul ul li a {
+        background: #2bcfa6;
+        color: #ffffff;
+        display: block;
+        padding: 0.7em 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%; }
+
+/* Introduction Page */
+main {
+  margin-top: 4.2em; }
+
+section:first-of-type h2 {
+  margin: 0; }
+section:first-of-type article:first-of-type {
+  background: #0a377f; }
+  section:first-of-type article:first-of-type h2 {
+    color: #ffffff;
+    font-size: 2.1em;
+    line-height: 1;
+    padding: 4.2rem 0;
+    text-align: center; }
+section:first-of-type article:nth-of-type(2) {
+  margin: 0 1.25em;
+  padding: 0 0 11.2em;
+  position: relative; }
+  section:first-of-type article:nth-of-type(2) h2 {
+    color: #2bcfa6;
+    font-size: 1.75em;
+    line-height: 1.25em;
+    padding: 4.2rem 0;
+    text-align: center; }
+
+/* About Page */
+section:nth-of-type(2) article:first-of-type {
+  background: #f2f2f2;
+  padding: 0 1.25em;
+  margin-top: 1.4em;
+  text-align: center; }
+  section:nth-of-type(2) article:first-of-type h2, section:nth-of-type(2) article:first-of-type p {
+    margin: 0; }
+  section:nth-of-type(2) article:first-of-type h2 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+    padding-top: 4.2rem; }
+  section:nth-of-type(2) article:first-of-type p {
+    font-family: "JosefinSlab", serif;
+    font-size: 1.25em;
+    line-height: 1.7857em;
+    padding: 2.8rem 0 4.2rem; }
+    section:nth-of-type(2) article:first-of-type p a {
+      color: #2bcfa6;
+      font-weight: bold;
+      text-decoration: none; }
+section:nth-of-type(2) article:nth-of-type(2) {
+  padding: 0 1.25em 1.4em; }
+  section:nth-of-type(2) article:nth-of-type(2) h3 {
+    font-size: 1.25em;
+    line-height: 1.7857em;
+    margin: 4.2rem 0 1.4rem;
+    text-align: center; }
+  section:nth-of-type(2) article:nth-of-type(2) ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 1.25em; }
+  section:nth-of-type(2) article:nth-of-type(2) li {
+    font-size: 0.875em;
+    line-height: 1.6em;
+    margin-bottom: 1.4rem;
+    text-indent: -1.6em; }
+  section:nth-of-type(2) article:nth-of-type(2) li:before {
+    color: #2bcfa6;
+    content: "\25A0";
+    padding-right: 1em; }
+
+/* Contact Page */
+section:last-of-type article {
+  text-align: center; }
+  section:last-of-type article h2 {
+    border-top: 1px solid #f2f2f2;
+    font-size: 2.1em;
+    line-height: 1.3333em;
+    padding-top: 4.2rem; }
+  section:last-of-type article p {
+    font-family: "JosefinSlab", serif;
+    font-size: 1.25em;
+    line-height: 1.7857em;
+    padding: 2.8rem 0 2.8rem; }
+    section:last-of-type article p a {
+      color: #2bcfa6;
+      text-decoration: none; }
+section:last-of-type div {
+  height: 10em; }
+
+/* Footer */
+footer {
+  background: #0a377f; }
+  footer p {
+    color: #ffffff;
+    font-size: 0.875em;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center; }
+
+@media screen and (min-width: 415px) {
+  /* Introduction Page */
+  section:first-of-type article:first-of-type h2 {
+    font-size: 2.8em;
+    line-height: 1;
+    padding: 9.8rem 0; }
+  section:first-of-type article:nth-of-type(2) {
+    padding: 0 0 14em; }
+    section:first-of-type article:nth-of-type(2) h2 {
+      font-size: 2.1em;
+      line-height: 1.3333em;
+      padding: 9.8rem 0; }
+
+  /* About Page */
+  section:nth-of-type(2) article:first-of-type h2 {
+    font-size: 2.1em;
+    line-height: 1.3333em;
+    padding-top: 9.8rem; }
+  section:nth-of-type(2) article:first-of-type p {
+    font-size: 1.6em;
+    line-height: 1.75em;
+    margin: 0 auto;
+    padding: 4.2rem 0 9.8rem;
+    width: 83.33333%; }
+  section:nth-of-type(2) article:nth-of-type(2) div {
+    float: left;
+    padding-right: 3.84615%;
+    width: 50%; }
+    section:nth-of-type(2) article:nth-of-type(2) div h3 {
+      font-size: 1.6em;
+      line-height: 1.75em;
+      margin-top: 2.8rem; }
+    section:nth-of-type(2) article:nth-of-type(2) div li {
+      font-size: 1em;
+      line-height: 1.4em; }
+    section:nth-of-type(2) article:nth-of-type(2) div:first-of-type {
+      border-bottom: 1px solid #f2f2f2;
+      float: none;
+      padding-right: 0;
+      text-align: center;
+      width: 100%; }
+      section:nth-of-type(2) article:nth-of-type(2) div:first-of-type h3 {
+        margin-top: 4.2rem; }
+      section:nth-of-type(2) article:nth-of-type(2) div:first-of-type ul {
+        padding: 0; }
+      section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li {
+        text-indent: 0; }
+        section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li:before {
+          content: " ";
+          padding-right: 0; }
+        section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li:last-of-type {
+          margin-bottom: 2.8rem; }
+
+  /* Contact Page */
+  section:last-of-type article h2 {
+    border-top: 1px solid #f2f2f2;
+    font-size: 2.1em;
+    padding-top: 9.8rem; }
+  section:last-of-type article p {
+    font-family: "JosefinSlab", serif;
+    font-size: 1.25em;
+    line-height: 1.7857em;
+    padding: 2.8rem 0 9.8rem; }
+    section:last-of-type article p a {
+      color: #2bcfa6;
+      text-decoration: none; }
+  section:last-of-type div {
+    height: 30em; } }
+@media screen and (min-width: 961px) {
+  /* Header Bar and Navigation */
+  header {
+    background: #0a377f;
+    padding: 1.4em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99; }
+    header nav {
+      margin: auto;
+      max-width: 1024px;
+      padding-top: 0;
+      position: static;
+      z-index: 100; }
+      header nav h1 {
+        border: auto;
+        clip: auto;
+        display: none;
+        float: left;
+        font-size: 1.4em;
+        line-height: 2em;
+        height: auto;
+        margin: auto;
+        overflow: auto;
+        padding: auto;
+        padding-left: 1.25rem;
+        position: static;
+        width: auto; }
+        header nav h1 a {
+          color: #ffffff;
+          text-decoration: none; }
+      header nav > ul {
+        float: right;
+        width: 16.66667%; }
+        header nav > ul .fa {
+          display: none; }
+        header nav > ul li {
+          list-style-type: none; }
+        header nav > ul ul {
+          clear: right;
+          display: block;
+          position: static; }
+          header nav > ul ul li {
+            float: left;
+            width: 50%; }
+            header nav > ul ul li:first-of-type {
+              border-bottom: 0;
+              padding-right: 11.49425%; }
+            header nav > ul ul li a {
+              background: none; }
+              header nav > ul ul li a:hover {
+                color: #2bcfa6; }
+
+  /* Introduction Page */
+  main {
+    margin-top: 0; }
+
+  section:first-of-type article:first-of-type h2 {
+    padding: 11.2rem 0; }
+  section:first-of-type article:nth-of-type(2) {
+    margin: auto;
+    max-width: 1024px;
+    padding: 0 0 14em; }
+    section:first-of-type article:nth-of-type(2) h2 {
+      padding: 8.4rem 0; }
+
+  /* About Page */
+  section:nth-of-type(2) article:first-of-type p {
+    font-size: 1.5em;
+    line-height: 1.8666em;
+    margin: auto;
+    max-width: 1024px; }
+    section:nth-of-type(2) article:first-of-type p a:hover {
+      border-bottom: 2px solid #2bcfa6; }
+  section:nth-of-type(2) article:nth-of-type(2) {
+    margin: auto;
+    max-width: 1024px; }
+    section:nth-of-type(2) article:nth-of-type(2) div {
+      width: 33.33333%; }
+      section:nth-of-type(2) article:nth-of-type(2) div h3 {
+        margin-top: 4.2rem; }
+      section:nth-of-type(2) article:nth-of-type(2) div:first-of-type {
+        border-bottom: 0;
+        float: left;
+        padding-right: 3.84615%;
+        text-align: left;
+        width: 33.33333%; }
+        section:nth-of-type(2) article:nth-of-type(2) div:first-of-type ul {
+          padding-left: 1.25em; }
+        section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li {
+          text-indent: -1.6em; }
+          section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li:before {
+            content: "\25A0";
+            padding-right: 1em; }
+          section:nth-of-type(2) article:nth-of-type(2) div:first-of-type li:last-of-type {
+            margin-bottom: 2.8rem; }
+      section:nth-of-type(2) article:nth-of-type(2) div:last-of-type {
+        padding-right: 0; }
+
+  /* Contact Page */
+  section:last-of-type article p {
+    margin: auto;
+    max-width: 1024px; }
+    section:last-of-type article p a:hover {
+      color: #f2f2f2; } }
+.no-js section:first-of-type article:nth-of-type(2) {
+  background: url("../img/graph.png") no-repeat bottom center;
+  background-size: contain;
+  padding-bottom: 4.2em; }
+
+/*# sourceMappingURL=main.css.map */
