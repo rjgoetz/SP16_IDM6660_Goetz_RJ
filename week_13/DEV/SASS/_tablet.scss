@@ -1,0 +1,32 @@
+@media screen and (min-width: 415px) {
+
+  header {
+    &>i {
+      width: auto;
+    }
+    .fa {
+      padding: 1.5rem;
+    }
+    h1 {
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  section {
+    position: relative;
+    div {
+      border: none;
+      position: absolute;
+      // padding: 0 3.125% 3.125% 0;
+      // width: 34.375%;
+      // &:nth-child(3n+3) {
+      //   width: 31.25%;
+      // }
+      img {
+        position: static;
+        width: 100%;
+      }
+    }
+  }
+}

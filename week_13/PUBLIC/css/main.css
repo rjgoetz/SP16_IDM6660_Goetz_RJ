@@ -2376,4 +2376,22 @@ section div {
     right: 30%;
     width: 160%; }
 
+@media screen and (min-width: 415px) {
+  header > i {
+    width: auto; }
+  header .fa {
+    padding: 1.5rem; }
+  header h1 {
+    text-align: left;
+    width: auto; }
+
+  section {
+    position: relative; }
+    section div {
+      border: none;
+      position: absolute; }
+      section div img {
+        position: static;
+        width: 100%; } }
+
 /*# sourceMappingURL=main.css.map */
