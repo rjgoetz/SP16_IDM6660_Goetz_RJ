@@ -53,14 +53,22 @@ $(document).ready(function() {
 
   // set column width variables
   function colWidthVar(n) {
-    if (n === 3) {
+    if (n === 3) { // max 768 width
       double = .65625 * windowWidth;
       single = .3125 * windowWidth;
       gutter = .03125 * windowWidth;
-    } else if (n === 4) {
+    } else if (n === 4) { // max 960 width
       double = .4875 * windowWidth;
       single = .23125 * windowWidth;
       gutter = .025 * windowWidth;
+    } else if (n === 5) { // max 1280 width
+      double = .38125 * windowWidth;
+      single = .175 * windowWidth;
+      gutter = .03125 * windowWidth;
+    } else if (n === 6) { // max 1600 width
+      double = .3125 * windowWidth;
+      single = .140625 * windowWidth;
+      gutter = .03125 * windowWidth;
     }
   }
 
@@ -70,6 +78,10 @@ $(document).ready(function() {
       n = 3;
     } else if (windowWidth > 768 && windowWidth < 961) {
       n = 4;
+    } else if (windowWidth > 960 && windowWidth < 1281) {
+      n = 5;
+    } else if (windowWidth > 1280) {
+      n = 6;
     }
   }
 
@@ -149,15 +161,33 @@ $(document).ready(function() {
 
       // options: go to next row; at first row; and all other photos
       // go to next row?
-      if (currentPos.left + prevPhoto.width() >= windowWidth) {
+      if (currentPos.left + prevPhoto.width() + $(pictures[i]).width() > windowWidth) {
         row++;
         column = 1;
         dataAttrRowCol(i);
 
         // position first column photo
-        prevRowColVar(1);
-        photoTop = prevRowColTop + prevRowColHeight + gutter;
-        positionImg(i, photoTop, 0);
+        if ($(pictures[i]).width() === double) {
+          prevRowColVar(1);
+          var height1 = prevRowColHeight;
+
+          prevRowColVar(2);
+          var height2 = prevRowColHeight;
+          if (height1 > height2) {
+            prevRowColVar(1);
+            photoTop = prevRowColTop + prevRowColHeight + gutter;
+            positionImg(i, photoTop, 0);
+          } else {
+            prevRowColVar(2);
+            photoTop = prevRowColTop + prevRowColHeight + gutter;
+            positionImg(i, photoTop, 0);
+          }
+        } else {
+          prevRowColVar(1);
+          photoTop = prevRowColTop + prevRowColHeight + gutter;
+          positionImg(i, photoTop, 0);
+        }
+
       }
         // at first row?
         else if (row === 1) {
@@ -183,7 +213,7 @@ $(document).ready(function() {
         if (photoCount === column) {
           if (prevRowColWidth === single) {
             prevRowColVar(column);
-            photoTop = prevRowColTop + prevRowColHeight + gutter;
+            photoTop = prevRowColTop + prevRowColHeight + gutter;            
           } else if (prevRowColWidth === double) {
             if (prevPhoto.width() === double) {
               prevRowColVar(column);
