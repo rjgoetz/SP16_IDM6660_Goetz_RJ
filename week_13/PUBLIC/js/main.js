@@ -16,9 +16,10 @@ $(document).ready(function() {
     $(this).toggleClass("fa-check-square-o");
   });
 
+
   // // // // // // // // // // // // // // // // // //
   // resize image square height for mobile version //
-  sizeImgBlock = function() {
+  function sizeImgBlock() {
     var
       height = $("body").width() / 3,
       imgBlock = $("section div")
@@ -28,6 +29,67 @@ $(document).ready(function() {
   }
 
 
+  // // // // // // // // // // // // // // //
+  // Get Data From JSON and Insert Into DOM
+
+  // getJSON global stores
+  var
+    output = "",
+    filter = ""
+  ;
+
+  // Create Output
+  function createData(insert) {
+
+    output += "<div>";
+    output += "<img src='" + insert.src + "'>";
+    // output += "<figure>";
+    // output += "<figcaption>" + insert.name + " " + insert.photoDate + "</figcaption>";
+    // output += "</figure>";
+    output += "</div>";
+
+  };
+
+  // Set filter value
+  function getFilter() {
+    filter = $("input[name='filter']:checked").val();
+  };
+
+  // get data from JSON file and output to DOM
+  function getData() {
+
+    // get initial filter setting
+    getFilter();
+
+    // reset output
+    output = "";
+
+    $.getJSON("data.json", function(data) {
+
+      $.each(data, function(index, value) {
+
+        if (filter === "all") {
+          createData(data[index]);
+        }
+
+      });
+
+      $("section").html(output);
+
+      if (windowWidth < 415) {
+        sizeImgBlock();
+      }
+
+      if (windowWidth > 414) {
+        $(window).load(function() {
+          runPhotoGrid();
+        })
+      }
+
+    });
+
+  };
+
   // // // // // // // // // // // // // // // // // //
   // position image for tablet and desktop versions //
 
@@ -36,10 +98,12 @@ $(document).ready(function() {
     column = 1,
     double,
     gutter,
+    height1,
+    height2,
     landscape,
     n,
     photoCount,
-    pictures = $("section div"),
+    pictures,
     prevRowCol,
     prevRowColHeight,
     prevRowColPos,
@@ -48,8 +112,6 @@ $(document).ready(function() {
     single,
     windowWidth = $(window).width()
   ;
-
-
 
   // set column width variables
   function colWidthVar(n) {
@@ -114,6 +176,7 @@ $(document).ready(function() {
   // position image
   function positionImg(index, photoTop, photoLeft) {
     $(pictures[index]).css({
+      "position" : "absolute",
       "top" : photoTop,
       "left" : photoLeft
     })
@@ -133,7 +196,10 @@ $(document).ready(function() {
     photoCount = $("section div[data-row='" + (row - 1) + "']").length;
   }
 
+
   function runPhotoGrid() {
+    // index photos in DOM
+    pictures = $("section div");
 
     // set up column numbers
     setNumColumns();
@@ -166,14 +232,22 @@ $(document).ready(function() {
         column = 1;
         dataAttrRowCol(i);
 
-        // position first column photo
-        if ($(pictures[i]).width() === double) {
-          prevRowColVar(1);
-          var height1 = prevRowColHeight;
+        prevRowColVar(1);
+        height1 = prevRowColHeight;
 
+        prevRowPhotoCount();
+        if (photoCount === 1 || photoCount < column) {
+          prevRowColVar(1);
+          photoTop = prevRowColTop + prevRowColHeight + gutter;
+          positionImg(i, photoTop, 0);
+        } else {
           prevRowColVar(2);
-          var height2 = prevRowColHeight;
+          height2 = prevRowColHeight;
           if (height1 > height2) {
+            prevRowColVar(1);
+            photoTop = prevRowColTop + prevRowColHeight + gutter;
+            positionImg(i, photoTop, 0);
+          } else if (height1 === height2) {
             prevRowColVar(1);
             photoTop = prevRowColTop + prevRowColHeight + gutter;
             positionImg(i, photoTop, 0);
@@ -182,10 +256,6 @@ $(document).ready(function() {
             photoTop = prevRowColTop + prevRowColHeight + gutter;
             positionImg(i, photoTop, 0);
           }
-        } else {
-          prevRowColVar(1);
-          photoTop = prevRowColTop + prevRowColHeight + gutter;
-          positionImg(i, photoTop, 0);
         }
 
       }
@@ -197,6 +267,7 @@ $(document).ready(function() {
         // position first-row photos
         photoLeft = currentPos.left + prevPhoto.width() + gutter;
         positionImg(i, 0, photoLeft)
+
       }
         // position remaining photos
         else {
@@ -209,30 +280,14 @@ $(document).ready(function() {
         // figure out previous row photo to base top value from
         prevRowPhotoCount();
         prevRowColVar(column - 1);
-
-        if (photoCount === column) {
-          if (prevRowColWidth === single) {
-            prevRowColVar(column);
-            photoTop = prevRowColTop + prevRowColHeight + gutter;            
-          } else if (prevRowColWidth === double) {
-            if (prevPhoto.width() === double) {
+        if (photoCount === 1) {
+          prevRowColVar(1);
+          photoTop = prevRowColTop + prevRowColHeight + gutter;
+        } else {
+          if (photoCount === column) {
+            if (prevRowColWidth === single) {
               prevRowColVar(column);
               photoTop = prevRowColTop + prevRowColHeight + gutter;
-            } else {
-              photoTop = prevRowColTop + prevRowColHeight + gutter;
-            }
-          }
-        } else {
-            if (column === n && prevRowColWidth === single) {
-              photoTop = prevRowColTop + prevRowColHeight + gutter;
-            } else if (prevRowColWidth === single) {
-              if (prevPhoto.width() === double) {
-                prevRowColVar(column + 1);
-                photoTop = prevRowColTop + prevRowColHeight + gutter;
-              } else {
-                prevRowColVar(column);
-                photoTop = prevRowColTop + prevRowColHeight + gutter;
-              }
             } else if (prevRowColWidth === double) {
               if (prevPhoto.width() === double) {
                 prevRowColVar(column);
@@ -241,151 +296,44 @@ $(document).ready(function() {
                 photoTop = prevRowColTop + prevRowColHeight + gutter;
               }
             }
+          } else {
+              if (column === n && prevRowColWidth === single) {
+                photoTop = prevRowColTop + prevRowColHeight + gutter;
+              } else if (prevRowColWidth === single) {
+                console.log("yep");
+                if (prevPhoto.width() === double) {
+                  prevRowColVar(column + 1);
+                  photoTop = prevRowColTop + prevRowColHeight + gutter;
+                } else {
+                  prevRowColVar(column);
+                  photoTop = prevRowColTop + prevRowColHeight + gutter;
+                }
+              } else if (prevRowColWidth === double) {
+                if (prevPhoto.width() === double) {
+                  prevRowColVar(column);
+                  photoTop = prevRowColTop + prevRowColHeight + gutter;
+                } else {
+                  photoTop = prevRowColTop + prevRowColHeight + gutter;
+                }
+              }
+            }
         }
-
 
         positionImg(i, photoTop, photoLeft);
       }
     } // end loop
 
-  } // end runPhotoGrid()
+  }; // end runPhotoGrid()
 
-  // positionImg = function() {
-  //   var
-  //     pictures = $("section div"),
-  //     windowWidth = $(window).width(),
-  //     row = 1,
-  //     column = 1,
-  //   ;
-  //
-  //   // size and position first image
-  //   if ($(pictures[0]).width() > $(pictures[0]).height()) {
-  //     $(pictures[0]).css({
-  //       "width" : .65625 * windowWidth,
-  //       "top" : 0,
-  //       "left" : 0
-  //     })
-  //     $(pictures[0]).attr({
-  //       "data-row" : row,
-  //       "data-column" : column
-  //     })
-  //   } else {
-  //     $(pictures[0]).css({
-  //       "width" : .3125 * windowWidth,
-  //       "top" : 0,
-  //       "left" : 0
-  //     })
-  //     $(pictures[0]).attr({
-  //       "data-row" : row,
-  //       "data-column" : column
-  //     })
-  //   }
-  //
-  //   // loop through photos and position according to previous
-  //   for (var i = 1; i < pictures.length; i++) {
-  //
-  //     var position = $(pictures[i - 1]).position();
-  //
-  //     // size photo landscape or portrait
-  //     if ($(pictures[i]).width() > $(pictures[i]).height()) {
-  //       $(pictures[i]).css("width", .65625 * windowWidth);
-  //     } else {
-  //       $(pictures[i]).css("width", .3125 * windowWidth);
-  //     }
-  //
-  //     // position photo
-  //     if ((position.left + $(pictures[i - 1]).width()) >= windowWidth) {
-  //       row++;
-  //       column = 1;
-  //       $(pictures[i]).attr({
-  //         "data-row" : row,
-  //         "data-column" : column
-  //       })
-  //
-  //       var
-  //         prevRowCol1 = $("section div[data-row='" + (row - 1) + "'][data-column='1']"),
-  //         prevRowCol1Pos = prevRowCol1.position(),
-  //         prevRowCol2 = $("section div[data-row='" + (row - 1) + "'][data-column='2']"),
-  //         prevRowCol3 = $("section div[data-row='" + (row - 1) + "'][data-column='3']")
-  //       ;
-  //
-  //       $(pictures[i]).css({
-  //         "left" : 0,
-  //         "top" : prevRowCol1Pos.top + prevRowCol1.height() + (windowWidth * .03125)
-  //       });
-  //
-  //     } else if (row === 1) {
-  //       column++;
-  //       $(pictures[i]).attr({
-  //         "data-row" : row,
-  //         "data-column" : column
-  //       })
-  //
-  //       $(pictures[i]).css({
-  //         "left" : position.left + ($(pictures[i-1]).width() + windowWidth * .03125),
-  //         "top" : 0
-  //       });
-  //
-  //     } else {
-  //       column++;
-  //       $(pictures[i]).attr({
-  //         "data-row" : row,
-  //         "data-column" : column
-  //       })
-  //
-  //       $(pictures[i]).css("left", position.left + ($(pictures[i-1]).width() + windowWidth * .03125));
-  //
-  //       if ($("section div[data-row='" + (row - 1) + "']").length === 3) {
-  //         if (column === 2) {
-  //           if ($(pictures[i-1]).width() === .65625 * windowWidth) {
-  //             var prevRowCol3Pos = prevRowCol3.position();
-  //             $(pictures[i]).css("top", prevRowCol3Pos.top + prevRowCol3.height() + (windowWidth * .03125));
-  //           } else {
-  //             var prevRowCol2Pos = prevRowCol2.position();
-  //             $(pictures[i]).css("top", prevRowCol2Pos.top + prevRowCol2.height() + (windowWidth * .03125));
-  //           }
-  //         } else if (column === 3) {
-  //           var prevRowCol3Pos = prevRowCol3.position();
-  //           $(pictures[i]).css("top", prevRowCol3Pos.top + prevRowCol3.height() + (windowWidth * .03125));
-  //         }
-  //       } else {
-  //         if (column === 2) {
-  //           if ($(pictures[i-1]).width() === .65625 * windowWidth) {
-  //             var prevRowCol2Pos = prevRowCol2.position();
-  //             $(pictures[i]).css("top", prevRowCol2Pos.top + prevRowCol2.height() + (windowWidth * .03125));
-  //           } else {
-  //             if (prevRowCol1.width() === .65625 * windowWidth) {
-  //               var prevRowCol1Pos = prevRowCol1.position();
-  //               $(pictures[i]).css("top", prevRowCol1Pos.top + prevRowCol1.height() + (windowWidth * .03125));
-  //             } else {
-  //               var prevRowCol2Pos = prevRowCol2.position();
-  //               $(pictures[i]).css("top", prevRowCol2Pos.top + prevRowCol2.height() + (windowWidth * .03125));
-  //             }
-  //           }
-  //         } else if (column === 3) {
-  //           var prevRowCol2Pos = prevRowCol2.position();
-  //           $(pictures[i]).css("top", prevRowCol2Pos.top + prevRowCol2.height() + (windowWidth * .03125));
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 
-  // // // // // // //
-  // Call functions //
-  // if ($(window).width() < 415) {
-  //   sizeImgBlock();
-  // } else if ($(window).width() > 415) {
-  //   positionImg();
-  // }
-  //
-  // $(window).resize(function() {
-  //   if ($(window).width() < 415) {
-  //     sizeImgBlock();
-  //   }
-  // })
+  // initial function calls
+  getData();
 
-  runPhotoGrid();
+  $(window).resize(function() {
+    if (windowWidth < 415) {
+      sizeImgBlock();
+    }
+  })
 
 
 

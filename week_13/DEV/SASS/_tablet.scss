@@ -6,34 +6,33 @@
       width: auto;
     }
     .fa {
-      font-size: 2.25em;
-      line-height: 1.3333em;
+      font-size: 2.15em;
+      line-height: 1.43333em;
       padding: 1.5rem;
     }
     h1 {
-      font-size: 2.25em;
-      line-height: 1.3333em;
+      font-size: 2.15em;
+      line-height: 1.43333em;
       text-align: left;
       width: auto;
     }
     nav {
-      width: 31.25%;
+      width: 50%;
       ul {
         li {
-          font-size: 1.625em;
-          line-height: 1.84615384615385em;
+          font-size: 1.75em;
+          line-height: 2.3333em;
           padding-bottom: 1.5rem;
-          input[type="checkbox"] {
-            & + label .fa-square-o {
-              font-size: 1.5em;
-              line-height: 1.5em;
-              padding: 0 1.25em 0 0;
+          input[type="radio"] {
+            & + label .fa-circle-o {
+              font-size: 1.75rem;
+              line-height: 2.3333em;
+              padding: 0 1.5em 0 0;
             }
-            & + label .fa-check-square-o {
-              font-size: 1.5em;
-              line-height: 1.5em;
-              padding: 0 1.25em 0 0;
-
+            & + label .fa-dot-circle-o {
+              font-size: 1.75rem;
+              line-height: 2.3333em;
+              padding: 0 1.5em 0 0;
             }
           }
         }
@@ -46,8 +45,7 @@
     position: relative;
     div {
       border: none;
-      height: auto;
-      position: absolute;
+      width: auto;
       img {
         position: static;
         width: 100%;
