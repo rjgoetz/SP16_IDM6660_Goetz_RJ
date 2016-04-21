@@ -185,10 +185,14 @@ $(document).ready(function() {
   // find previous row column height and position
   function prevRowColVar(col) {
     prevRowCol = $("section div[data-row='" + (row - 1) + "'][data-column='" + col + "']");
-    prevRowColHeight = prevRowCol.height();
-    prevRowColPos = prevRowCol.position();
-    prevRowColTop = prevRowColPos.top;
-    prevRowColWidth = prevRowCol.width();
+    if (prevRowCol.length === 0) {
+      console.log("this column is missing");
+    } else {
+      prevRowColHeight = prevRowCol.height();
+      prevRowColPos = prevRowCol.position();
+      prevRowColTop = prevRowColPos.top;
+      prevRowColWidth = prevRowCol.width();
+    }
   }
 
   // find number of photos in previous row
@@ -231,6 +235,7 @@ $(document).ready(function() {
         row++;
         column = 1;
         dataAttrRowCol(i);
+        console.log(column);
 
         prevRowColVar(1);
         height1 = prevRowColHeight;
@@ -261,6 +266,8 @@ $(document).ready(function() {
       }
         // at first row?
         else if (row === 1) {
+        console.log(column);
+
         column++;
         dataAttrRowCol(i);
 
@@ -273,51 +280,173 @@ $(document).ready(function() {
         else {
         column++;
         dataAttrRowCol(i);
+        console.log(column);
 
         // position left remaining photos
         photoLeft = currentPos.left + prevPhoto.width() + gutter;
 
         // figure out previous row photo to base top value from
-        prevRowPhotoCount();
-        prevRowColVar(column - 1);
-        if (photoCount === 1) {
-          prevRowColVar(1);
+        function photoTop() {
           photoTop = prevRowColTop + prevRowColHeight + gutter;
-        } else {
-          if (photoCount === column) {
-            if (prevRowColWidth === single) {
-              prevRowColVar(column);
-              photoTop = prevRowColTop + prevRowColHeight + gutter;
-            } else if (prevRowColWidth === double) {
-              if (prevPhoto.width() === double) {
-                prevRowColVar(column);
-                photoTop = prevRowColTop + prevRowColHeight + gutter;
-              } else {
-                photoTop = prevRowColTop + prevRowColHeight + gutter;
-              }
-            }
-          } else {
-              if (column === n && prevRowColWidth === single) {
-                photoTop = prevRowColTop + prevRowColHeight + gutter;
-              } else if (prevRowColWidth === single) {
-                console.log("yep");
-                if (prevPhoto.width() === double) {
-                  prevRowColVar(column + 1);
-                  photoTop = prevRowColTop + prevRowColHeight + gutter;
-                } else {
-                  prevRowColVar(column);
-                  photoTop = prevRowColTop + prevRowColHeight + gutter;
-                }
-              } else if (prevRowColWidth === double) {
-                if (prevPhoto.width() === double) {
-                  prevRowColVar(column);
-                  photoTop = prevRowColTop + prevRowColHeight + gutter;
-                } else {
-                  photoTop = prevRowColTop + prevRowColHeight + gutter;
-                }
-              }
-            }
         }
+
+        // positioning logic for 3+ column layout
+        if (n >= 3) { // n === 3
+          if (column === 2) {
+            console.log("I ran column 2 logic");
+
+            function colLogic24() {
+              if (prevPhoto.width() === single && $(pictures[i]).width() === single) {
+              prevRowColVar(1);
+              if (prevRowColWidth === double) {
+                prevRowColVar(1);
+                photoTop();
+              } else {
+                prevRowColVar(2);
+                photoTop();
+              }
+            } else if (prevPhoto.width() === double) {
+              prevRowColVar(2);
+              width2 = prevRowColWidth;
+              height2 = prevRowColHeight;
+              prevRowColVar(3);
+              width3 = prevRowColWidth;
+              height3 = prevRowColHeight;
+              if (!width2) {
+                console.log("eh?");
+                prevRowColVar(1);
+                photoTop();
+              } else if (!width3) {
+                prevRowColVar(2);
+                photoTop();
+              } else if (width3) {
+                console.log("here");
+                if (height2 > height3) {
+                  prevRowColVar(2);
+                  photoTop();
+                } else {
+                  prevRowColVar(3);
+                  photoTop();
+                }
+              } else {
+                prevRowColVar(2);
+                photoTop();
+              }
+            } else {
+              prevRowColVar(1);
+              height1 = prevRowColHeight;
+              prevRowColVar(2);
+              height2 = prevRowColHeight;
+              width2 = prevRowColWidth;
+              prevRowColVar(3);
+              width3 = prevRowColWidth;
+              console.log(width3);
+              if (width3  > 0) {
+                if (width2 > width3) {
+                  prevRowColVar(2);
+                  photoTop();
+                } else {
+                  prevRowColVar(3);
+                  photoTop();
+                }
+              } else if (width2 === double) {
+                prevRowColVar(2);
+                photoTop();
+              } else {
+                if (height1 > height2) {
+                  prevRowColVar(1);
+                  photoTop();
+                } else {
+                  prevRowColVar(2);
+                  photoTop();
+                }
+              }
+
+            }
+          }
+          colLogic24();
+          } else if (column === 3) {
+            console.log("I ran column 3 logic");
+
+            function colLogic35() {
+              prevRowColVar(2);
+              width2 = prevRowColWidth;
+
+              prevRowColVar(3);
+              width3 = prevRowColWidth;
+
+              if (width3 === double) {
+                prevRowColVar(3);
+                photoTop();
+              } else if (width2 === double) {
+                prevRowColVar(2);
+                photoTop();
+              } else if (width3.length > 0) {
+                prevRowColVar(3);
+                photoTop();
+              } else {
+                prevRowColVar(2);
+                photoTop();
+              }
+            }
+          colLogic35();
+        } else if (column === 4) {
+          console.log("I ran column 4 logic");
+          colLogic24();
+        } else if (column === 5) {
+          colLogic35();
+        }
+
+
+
+
+
+
+        }
+
+
+
+
+        // prevRowPhotoCount();
+        // prevRowColVar(column - 1);
+        // if (photoCount === 1) {
+        //   prevRowColVar(1);
+        //   photoTop = prevRowColTop + prevRowColHeight + gutter;
+        // } else {
+        //   if (photoCount === column) {
+        //     if (prevRowColWidth === single) {
+        //       prevRowColVar(column);
+        //       photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //     } else if (prevRowColWidth === double) {
+        //       if (prevPhoto.width() === double) {
+        //         prevRowColVar(column);
+        //         photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //       } else {
+        //         photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //       }
+        //     }
+        //   } else {
+        //       if (column === n && prevRowColWidth === single) {
+        //         photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //       } else if (prevRowColWidth === single) {
+        //         console.log("yep");
+        //         if (prevPhoto.width() === double) {
+        //           prevRowColVar(column + 1);
+        //           photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //         } else {
+        //           prevRowColVar(column);
+        //           photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //         }
+        //       } else if (prevRowColWidth === double) {
+        //         if (prevPhoto.width() === double) {
+        //           prevRowColVar(column);
+        //           photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //         } else {
+        //           photoTop = prevRowColTop + prevRowColHeight + gutter;
+        //         }
+        //       }
+        //     }
+        // }
 
         positionImg(i, photoTop, photoLeft);
       }
