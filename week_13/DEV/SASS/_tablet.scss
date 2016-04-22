@@ -42,14 +42,22 @@
 
   section {
     margin-top: 3em;
-    position: relative;
     div {
       border: none;
-      width: auto;
+      margin-bottom: 3.125%;
       img {
         position: static;
         width: 100%;
       }
+    }
+    .landscape {
+      width: 65.625%;
+    }
+    .portrait {
+      width: 31.25%;
+    }
+    .last {
+      margin-right: 0;
     }
   }
 }

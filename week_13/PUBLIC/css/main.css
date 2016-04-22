@@ -2408,16 +2408,30 @@ section div {
           padding: 0 1.5em 0 0; }
 
   section {
-    margin-top: 3em;
-    position: relative; }
+    margin-top: 3em; }
     section div {
       border: none;
-      width: auto; }
+      margin-bottom: 3.125%; }
       section div img {
         position: static;
-        width: 100%; } }
+        width: 100%; }
+    section .landscape {
+      width: 65.625%; }
+    section .portrait {
+      width: 31.25%; }
+    section .last {
+      margin-right: 0; } }
 @media screen and (min-width: 600px) {
   header nav {
     width: 31.25%; } }
+@media screen and (min-width: 769px) {
+  body {
+    margin: auto;
+    max-width: 1600px; }
+
+  section .landscape {
+    width: 48.125%; }
+  section .portrait {
+    width: 22.1875%; } }
 
 /*# sourceMappingURL=main.css.map */
