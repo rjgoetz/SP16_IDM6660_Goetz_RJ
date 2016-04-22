@@ -1,10 +1,21 @@
 @media screen and (min-width: 961px) {
+
+  header {
+    nav {
+      width: ((224 / 1280) + (40 / 1280)) * 100%;
+    }
+  }
+
   section {
+    div {
+      margin-bottom: (40 / 1280) * 100%;
+      margin-right: (40 / 1280) * 100%;
+    }
     .landscape {
-      width: 38.125%;
+      width: (488 / 1280) * 100%;
     }
     .portrait {
-      width: 17.5%;
+      width: (224 / 1280) * 100%;
     }
   }
 }

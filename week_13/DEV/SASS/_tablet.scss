@@ -6,13 +6,13 @@
       width: auto;
     }
     .fa {
-      font-size: 2.15em;
-      line-height: 1.43333em;
+      font-size: 2em;
+      line-height: 1.3333em;
       padding: 1.5rem;
     }
     h1 {
-      font-size: 2.15em;
-      line-height: 1.43333em;
+      font-size: 2em;
+      line-height: 1.33333em;
       text-align: left;
       width: auto;
     }
@@ -44,20 +44,18 @@
     margin-top: 3em;
     div {
       border: none;
-      margin-bottom: 3.125%;
+      margin-bottom: (24 / 768) * 100%;
+      margin-right: (24 / 768) * 100%;
       img {
         position: static;
         width: 100%;
       }
     }
     .landscape {
-      width: 65.625%;
+      width: (504 / 768) * 100%;
     }
     .portrait {
-      width: 31.25%;
-    }
-    .last {
-      margin-right: 0;
+      width: (240 / 768) * 100%;
     }
   }
 }

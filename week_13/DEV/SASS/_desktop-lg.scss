@@ -1,10 +1,14 @@
 @media screen and (min-width: 1281px) {
   section {
+    div {
+      margin-bottom: (50 / 1600) * 100%;
+      margin-right: (50 / 1600) * 100%;
+    }
     .landscape {
-      width: 38.125%;
+      width: (500 / 1600) * 100%;
     }
     .portrait {
-      width: 17.5%;
+      width: (225 / 1600) * 100%;
     }
   }
 }

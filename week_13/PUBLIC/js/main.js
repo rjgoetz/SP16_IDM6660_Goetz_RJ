@@ -1,12 +1,19 @@
 $(document).ready(function() {
 
   // toggle menu
+
   $(".fa-bars").click(function() {
     $("header nav").toggle();
-  });
+  })
 
   $(".fa-times").click(function() {
     $("header nav").toggle();
+  });
+
+  $(document).on("click", function(event) {
+    if(!(event.target).closest("header")) {
+      $("header nav").hide();
+    }
   });
 
 
@@ -43,13 +50,13 @@ $(document).ready(function() {
   }
 
   if (n === 3) { // max 768 width
-    var gutter = Math.round(.03125 * windowWidth);
-  } else if (n === 4) { // max 960 width
+    var gutter = (24 / 768) * windowWidth;
+  } else if (n === 4) { // min 769 -> max 960 width
     var gutter = (36 / 960) * windowWidth;
-  } else if (n === 5) { // max 1280 width
-    var gutter = Math.round(.03125 * windowWidth);
-  } else if (n === 6) { // max 1600 width
-    var gutter = Math.round(.03125 * windowWidth);
+  } else if (n === 5) { // min 961 -> max 1280 width
+    var gutter = (40 / 1280) * windowWidth;
+  } else if (n === 6) { // min 1281 -> max 1600 width
+    var gutter = (50 / 1600) * windowWidth;
   }
 
 
@@ -132,19 +139,29 @@ $(document).ready(function() {
 
       $("section").html(output);
 
-      // check last in row by looping through photos
-      for (var i = 0; i < $("section div").length; i++) {
+      // check for last in row by looping through photos
+      for (var i = 1; i < $("section div").length; i++) {
         pictures = $("section div");
-        picturesPos = $(pictures[i]).position();
-        picturesWidth = $(pictures[i]).width();
-        totalWidth = picturesWidth + picturesPos.left + gutter;
+        prevPicturePos = $(pictures[i-1]).position();
 
-        if (picturesPos.left === 0) {
-          $(pictures[i]).css("margin-right", "3.125%");
-        } else if (totalWidth < windowWidth) {
-          $(pictures[i]).css("margin-right", "3.125%");
-        } else {
-          $(pictures[i]).addClass("last");
+        // get floating point width of previous picture
+        rect1 = $(pictures)[i-1].getBoundingClientRect();
+        prevPictureWidth = rect1.right - rect1.left;
+
+        // get floating point width of current picture
+        rect2 = $(pictures)[i].getBoundingClientRect();
+        curPictureWidth = rect2.right - rect2.left;
+        curPicturePos = $(pictures[i]).position();
+
+        totalWidth = (prevPicturePos.left + prevPictureWidth + gutter + curPictureWidth);
+        console.log(totalWidth);
+
+        console.log(i + " " + prevPicturePos.left + " " + prevPictureWidth + " " + curPictureWidth + " " + windowWidth);
+
+        if (totalWidth === windowWidth) {
+          $(pictures[i]).css("margin-right", "0");
+        } else if (curPicturePos.left === 0) {
+          $(pictures[i]).css("clear", "both");
         }
 
       }

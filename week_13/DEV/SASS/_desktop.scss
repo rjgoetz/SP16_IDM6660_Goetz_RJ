@@ -5,7 +5,17 @@
     max-width: 1600px;
   }
 
+  header {
+    nav {
+      width: ((213 / 960) + (36 / 960)) * 100%;
+    }
+  }
+
   section {
+    div {
+      margin-bottom: (36 / 960) * 100%;
+      margin-right: (36 / 960) * 100%;
+    }
     .landscape {
       width: (462 / 960) * 100%;
     }
