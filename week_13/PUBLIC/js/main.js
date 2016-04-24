@@ -317,6 +317,6 @@ $(document).ready(function() {
     if (windowWidth < 415) {
       sizeImgBlock();
     }
-  })
+  });
 
 });
