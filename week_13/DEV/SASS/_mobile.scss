@@ -95,12 +95,71 @@ section {
       border-right: none;
     }
     img {
+      cursor: pointer;
       position: relative;
       right: 30%;
       width: 160%;
     }
     figure {
       display: none;
+    }
+  }
+}
+
+.lightbox {
+  background-color: rgba($black, 0.96);
+  position: fixed;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  i {
+    color: $white;
+    cursor: pointer;
+    position: absolute;
+    font-size: 2rem;
+    line-height: 1.5em;
+    padding: 0 0.25em;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 101;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 75%;
+  }
+  figure {
+    color: $white;
+    display: block;
+    font-size: 1.25em;
+    line-height: 1.2em;
+    margin: 1.5em 0 0 0;
+    text-align: center;
+  }
+  .lightbox-nav {
+    display: block;
+    padding-top: 4em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    i {
+      color: $white;
+      float: left;
+      font-size: 2em;
+      line-height: 1.3333em;
+      padding: 0;
+      padding-left: 5rem;
+      position: static;
+      text-align: left;
+      width: 50%;
+      &:last-of-type {
+        float: right;
+        padding: 0;
+        padding-right: 5rem;
+        text-align: right;
+      }
     }
   }
 }

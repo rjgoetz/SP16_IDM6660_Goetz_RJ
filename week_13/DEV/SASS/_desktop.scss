@@ -24,4 +24,19 @@
     }
   }
 
+  .lightbox {
+    img {
+      height: 85%;
+      width: auto;
+    }
+    .lightbox-nav {
+      i {        
+        padding-left: 3rem;
+        &:last-of-type {
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+
 }
