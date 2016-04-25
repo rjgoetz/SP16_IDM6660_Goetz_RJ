@@ -217,13 +217,16 @@ $(document).ready(function() {
     boxOutput += "<div class='lightbox'>";
     boxOutput += "<i class='fa fa-times'></i>"
     boxOutput += "<img src='" + url + "'>";
+
+    boxOutput += "<div class='lightbox-nav'>";
+    boxOutput += "<i class='fa fa-chevron-left'></i>";
+    boxOutput += "<i class='fa fa-chevron-right'></i>";
+    boxOutput += "</div>";
+
     boxOutput += "<figure>";
     boxOutput += "<figcaption>" + captionText + "</figcaption>";
     boxOutput += "</figure>";
-    boxOutput += "<div class='lightbox-nav'>";
-    boxOutput += "<i class='fa fa-chevron-circle-left'></i>";
-    boxOutput += "<i class='fa fa-chevron-circle-right'></i>";
-    boxOutput += "</div>";
+
     boxOutput += "</div>";
 
     $(boxOutput).prependTo("body");
@@ -239,14 +242,6 @@ $(document).ready(function() {
     $("body > div").css("padding-top", topPosition);
 
   };
-
-  function arrowPosition() {
-    arrowHeight = 96;
-    boxHeight = $(window).height();
-    topPosition = ((boxHeight - arrowHeight) / 2);
-
-    $("body .lightbox-nav").css("padding-top", topPosition);
-  }
 
   function imgLocation() {
 
@@ -275,9 +270,6 @@ $(document).ready(function() {
       imgLocation();
       lightbox();
       boxPosition();
-      if (windowWidth > 599) {
-        arrowPosition();
-      }
 
     })
 
@@ -292,7 +284,7 @@ $(document).ready(function() {
 
   // navigate to next photo
 
-  $("body").on("click", ".lightbox .fa-chevron-circle-right", function() {
+  $("body").on("click", ".lightbox .fa-chevron-right", function() {
     $(".lightbox").remove();
     boxOutput = "";
     if (imgIndex < (photosArray.length - 1)) {
@@ -301,16 +293,13 @@ $(document).ready(function() {
       imgLocation();
       lightbox();
       boxPosition();
-      if (windowWidth > 599) {
-        arrowPosition();
-      }
     }
 
   });
 
   // navigate to previous photo
 
-  $("body").on("click", ".lightbox .fa-chevron-circle-left", function() {
+  $("body").on("click", ".lightbox .fa-chevron-left", function() {
     $(".lightbox").remove();
     boxOutput = "";
 
@@ -320,9 +309,6 @@ $(document).ready(function() {
       imgLocation();
       lightbox();
       boxPosition();
-      if (windowWidth > 599) {
-        arrowPosition();
-      }
     }
 
   });

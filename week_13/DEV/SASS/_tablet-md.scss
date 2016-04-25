@@ -10,14 +10,29 @@
       padding: 0 1.5em;
     }
     .lightbox-nav {
+      display: block;
       padding: 0;
+      padding-top: 1.5em;
+      height: 4.5em;
+      position: absolute;
+      bottom: 3rem;
+      width: 100%;
       i {
-        font-size: 3em;
-        line-height: 2em;
-        padding-left: 1.5rem;
+        color: $white;
+        float: left;
+        font-size: 2em;
+        height: 1.5em;
+        line-height: 1.3333em;
+        padding: 0;
+        padding-left: 3rem;
+        position: static;
+        text-align: left;
         width: 15%;
         &:last-of-type {
-          padding-right: 1.5rem;
+          float: right;
+          padding: 0;
+          padding-right: 3rem;
+          text-align: right;
         }
       }
     }

@@ -139,27 +139,6 @@ section {
     text-align: center;
   }
   .lightbox-nav {
-    display: block;
-    padding-top: 4em;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    i {
-      color: $white;
-      float: left;
-      font-size: 2em;
-      line-height: 1.3333em;
-      padding: 0;
-      padding-left: 5rem;
-      position: static;
-      text-align: left;
-      width: 50%;
-      &:last-of-type {
-        float: right;
-        padding: 0;
-        padding-right: 5rem;
-        text-align: right;
-      }
-    }
+    display: none;
   }
 }

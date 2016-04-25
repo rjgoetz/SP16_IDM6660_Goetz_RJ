@@ -2409,26 +2409,7 @@ section div {
     margin: 1.5em 0 0 0;
     text-align: center; }
   .lightbox .lightbox-nav {
-    display: block;
-    padding-top: 4em;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-    .lightbox .lightbox-nav i {
-      color: #fcfcfc;
-      float: left;
-      font-size: 2em;
-      line-height: 1.3333em;
-      padding: 0;
-      padding-left: 5rem;
-      position: static;
-      text-align: left;
-      width: 50%; }
-      .lightbox .lightbox-nav i:last-of-type {
-        float: right;
-        padding: 0;
-        padding-right: 5rem;
-        text-align: right; }
+    display: none; }
 
 @media screen and (min-width: 415px) {
   header {
@@ -2479,37 +2460,57 @@ section div {
   .lightbox i {
     padding: 0 1.5em; }
   .lightbox .lightbox-nav {
-    padding: 0; }
+    display: block;
+    padding: 0;
+    padding-top: 1.5em;
+    height: 4.5em;
+    position: absolute;
+    bottom: 3rem;
+    width: 100%; }
     .lightbox .lightbox-nav i {
-      font-size: 3em;
-      line-height: 2em;
-      padding-left: 1.5rem;
+      color: #fcfcfc;
+      float: left;
+      font-size: 2em;
+      height: 1.5em;
+      line-height: 1.3333em;
+      padding: 0;
+      padding-left: 3rem;
+      position: static;
+      text-align: left;
       width: 15%; }
       .lightbox .lightbox-nav i:last-of-type {
-        padding-right: 1.5rem; } }
+        float: right;
+        padding: 0;
+        padding-right: 3rem;
+        text-align: right; } }
 @media screen and (min-width: 769px) {
-  body {
+  header {
     margin: auto;
     max-width: 1600px; }
+    header nav {
+      width: 25.9375%; }
 
-  header nav {
-    width: 25.9375%; }
-
-  section div {
-    margin-bottom: 3.75%;
-    margin-right: 3.75%; }
-  section .landscape {
-    width: 48.125%; }
-  section .portrait {
-    width: 22.1875%; }
+  section {
+    margin: 3em auto 0;
+    max-width: 1600px; }
+    section div {
+      margin-bottom: 3.75%;
+      margin-right: 3.75%; }
+    section .landscape {
+      width: 48.125%; }
+    section .portrait {
+      width: 22.1875%; }
 
   .lightbox img {
     height: 85%;
     width: auto; }
   .lightbox .lightbox-nav i {
-    padding-left: 3rem; }
+    padding-left: 3rem;
+    text-align: right;
+    width: 25%; }
     .lightbox .lightbox-nav i:last-of-type {
-      padding-right: 3rem; } }
+      padding-right: 3rem;
+      text-align: left; } }
 @media screen and (min-width: 961px) {
   header nav {
     width: 20.625%; }
