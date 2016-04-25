@@ -55,7 +55,11 @@ $(document).ready(function() {
   } else if (n === 5) { // min 961 -> max 1280 width
     var gutter = (40 / 1280) * windowWidth;
   } else if (n === 6) { // min 1281 -> max 1600 width
-    var gutter = (50 / 1600) * windowWidth;
+    if (windowWidth <= 1600) {
+      var gutter = (50 / 1600) * windowWidth;
+    } else {
+      var gutter = (50 / 1600) * 1600;
+    }
   };
 
 
@@ -118,11 +122,26 @@ $(document).ready(function() {
         var margin = $(pictures[i-1]).css("margin-right");
 
         totalWidth = (prevPicturePos.left + prevPictureWidth + gutter + curPictureWidth);
+        if (windowWidth > 1600) {
+          totalWidth -= ((windowWidth - 1600) / 2);
+        }
+        console.log(i + " " + totalWidth);
 
-        if (totalWidth > (.99 * windowWidth) && totalWidth <= windowWidth) {
-          $(pictures[i]).css("margin-right", "0");
-        } else if (margin === "0px") {
-          $(pictures[i]).css("clear", "both");
+        if (windowWidth <= 1600) {
+          if (totalWidth > (.98 * windowWidth) && totalWidth <= windowWidth) {
+            $(pictures[i]).css("margin-right", "0");
+          } else if (margin === "0px") {
+            $(pictures[i]).css("clear", "both");
+          }
+        } else if (windowWidth > 1600) {
+          if (totalWidth > 1584 && totalWidth <= 1600) {
+            console.log("end");
+            $(pictures[i]).css("margin-right", "0");
+          } else if (margin === "0px") {
+            console.log("clear");
+            $(pictures[i]).css("clear", "both");
+
+          }
         }
       }
     }
