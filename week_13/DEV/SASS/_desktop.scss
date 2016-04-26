@@ -3,8 +3,17 @@
   header {
     margin: auto;
     max-width: 1600px;
+    & > i {
+      cursor: pointer;
+    }
     nav {
       width: ((213 / 960) + (36 / 960)) * 100%;
+      & > i {
+        cursor: pointer;
+      }
+      ul li label i {
+        cursor: pointer;
+      }
     }
   }
 

@@ -2311,7 +2311,7 @@ header {
     line-height: 1.84615384615385em;
     padding: 1.5rem 0; }
   header nav {
-    background: #1d2128;
+    background: rgba(29, 33, 40, 0.95);
     color: #fcfcfc;
     display: none;
     float: left;
@@ -2378,6 +2378,14 @@ section div {
     width: 160%; }
   section div figure {
     display: none; }
+section #loader {
+  padding-top: 7.5em;
+  width: 100%; }
+  section #loader i {
+    color: #1d2128;
+    font-size: 3em;
+    text-align: center;
+    width: 100%; }
 
 .lightbox {
   background-color: rgba(29, 33, 40, 0.96);
@@ -2434,11 +2442,11 @@ section div {
         header nav ul li input[type="radio"] + label .fa-circle-o {
           font-size: 1.75rem;
           line-height: 2.3333em;
-          padding: 0 1.5em 0 0; }
+          padding: 0 1.5em 0 0.75em; }
         header nav ul li input[type="radio"] + label .fa-dot-circle-o, header nav ul li input[type="radio"]:checked + label i {
           font-size: 1.75rem;
           line-height: 2.3333em;
-          padding: 0 1.5em 0 0; }
+          padding: 0 1.5em 0 0.75em; }
 
   section {
     margin-top: 3em; }
@@ -2487,8 +2495,14 @@ section div {
   header {
     margin: auto;
     max-width: 1600px; }
+    header > i {
+      cursor: pointer; }
     header nav {
       width: 25.9375%; }
+      header nav > i {
+        cursor: pointer; }
+      header nav ul li label i {
+        cursor: pointer; }
 
   section {
     margin: 3em auto 0;

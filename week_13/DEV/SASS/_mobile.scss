@@ -17,7 +17,7 @@ header {
     padding: 1.5rem 0;
   }
   nav {
-    background: $black;
+    background: rgba($black, 0.95);
     color: $white;
     display: none;
     float: left;
@@ -102,6 +102,16 @@ section {
     }
     figure {
       display: none;
+    }
+  }
+  #loader {
+    padding-top: 7.5em;
+    width: 100%;
+    i {
+      color: $black;
+      font-size: 3em;
+      text-align: center;
+      width: 100%;
     }
   }
 }

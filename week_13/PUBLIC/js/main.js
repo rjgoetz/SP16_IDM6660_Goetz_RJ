@@ -28,11 +28,12 @@ $(document).ready(function() {
   function sizeImgBlock() {
     var
       height = $("body").width() / 3,
-      imgBlock = $("section div")
+      imgBlock = $(".portrait, .landscape");
     ;
 
     $(imgBlock).css("height", height);
   };
+
 
   // // // // // // // //
   // grid calculations
@@ -69,11 +70,14 @@ $(document).ready(function() {
   // getJSON global stores
   var
     output = "",
-    filter = ""
+    filter = "",
+    imgLoadArray = []
   ;
 
   // Create Output
   function createData(insert) {
+
+    var imgToLoad = "<img src='" + insert.src + "'>";
 
     output += "<div class='" + insert.layout + "'>";
     output += "<img src='" + insert.src + "'>";
@@ -81,6 +85,10 @@ $(document).ready(function() {
     output += "<figcaption>" + insert.name + "</figcaption>";
     output += "</figure>";
     output += "</div>";
+
+    $(imgToLoad).load(function() {
+      imgLoadArray.push(imgToLoad);
+    });
 
   };
 
@@ -125,7 +133,6 @@ $(document).ready(function() {
         if (windowWidth > 1600) {
           totalWidth -= ((windowWidth - 1600) / 2);
         }
-        console.log(i + " " + totalWidth);
 
         if (windowWidth <= 1600) {
           if (totalWidth > (.98 * windowWidth) && totalWidth <= windowWidth) {
@@ -135,10 +142,8 @@ $(document).ready(function() {
           }
         } else if (windowWidth > 1600) {
           if (totalWidth > 1584 && totalWidth <= 1600) {
-            console.log("end");
             $(pictures[i]).css("margin-right", "0");
           } else if (margin === "0px") {
-            console.log("clear");
             $(pictures[i]).css("clear", "both");
 
           }
@@ -147,7 +152,6 @@ $(document).ready(function() {
     }
   }
 
-
   // listen for menu radio button click
 
   $("nav").on("click", "input[name=filter]", function() {
@@ -155,8 +159,6 @@ $(document).ready(function() {
     getData();
 
   });
-
-
 
   // get data from JSON file and output to DOM
   function getData() {
@@ -167,24 +169,30 @@ $(document).ready(function() {
     // reset output
     output = "";
 
+    var numPhotos = 0;
+
     $.getJSON("data.json", function(data) {
+      imgLoadArray = [];
 
       $.each(data, function(index, value) {
 
         if (filter === "all") {
+          numPhotos++;
           createData(data[index]);
         } else {
           if (checkFilter(data[index])) {
+            numPhotos++;
             createData(data[index]);
           }
         }
 
       });
 
-      $("section").html(output);
+      if (imgLoadArray.length < numPhotos) {
+        $("section").html(output);
+      }
 
       checkLastInRow();
-
 
       if (windowWidth < 415) {
         sizeImgBlock();
