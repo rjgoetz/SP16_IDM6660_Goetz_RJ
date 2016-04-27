@@ -40,11 +40,18 @@ $(document).ready(function() {
   var
     windowWidth,
     n,
-    gutter
+    gutter,
+    mobile
   ;
 
   function calcGrid() {
     windowWidth = window.innerWidth;
+
+    if (windowWidth < 415) {
+      mobile = true;
+    } else {
+      mobile = false;
+    }
 
     if (windowWidth > 414 && windowWidth < 769) {
       n = 3;
@@ -120,7 +127,7 @@ $(document).ready(function() {
 
   // check for last in row by looping through photos
   function checkLastInRow() {
-    if (windowWidth > 414) {
+    if (mobile === false) {
         for (var i = 1; i < $("section div").length; i++) {
         pictures = $("section div");
         prevPicturePos = $(pictures[i-1]).position();
@@ -143,7 +150,7 @@ $(document).ready(function() {
         }
 
         if (windowWidth <= 1600) {
-          if (totalWidth > (.98 * windowWidth) && totalWidth <= windowWidth) {
+          if (totalWidth > (.95 * windowWidth) && totalWidth <= windowWidth) {
             $(pictures[i]).css("margin-right", "0");
           } else if (margin === "0px") {
             $(pictures[i]).css("clear", "both");
@@ -200,10 +207,10 @@ $(document).ready(function() {
         $("section").html(output);
       }
 
-      checkLastInRow();
-
-      if (windowWidth < 415) {
+      if (mobile === true) {
         sizeImgBlock();
+      } else {
+        checkLastInRow();
       }
 
     });
@@ -337,17 +344,16 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     var oldN = n;
-    var oldWindow = windowWidth;
-    console.log(oldN + " " + oldWindow);
+    var oldMobile = mobile;
+    console.log(oldMobile);
     calcGrid();
-    console.log(windowWidth);
+    console.log(mobile);
     if (oldN !== n) {
       getData();
-    } else if (oldWindow > 414 && windowWidth < 415) {
+    } else if (oldMobile !== mobile) {
+      console.log("change");
       getData();
-    } else if (windowWidth > 414 && oldWindow < 415) {
-      getData();
-    } else if (windowWidth < 415) {
+    } else if (mobile === true) {
       sizeImgBlock();
     }
   });
