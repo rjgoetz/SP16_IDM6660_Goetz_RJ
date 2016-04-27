@@ -37,30 +37,38 @@ $(document).ready(function() {
 
   // // // // // // // //
   // grid calculations
-  var windowWidth = $(window).width();
+  var
+    windowWidth,
+    n,
+    gutter
+  ;
 
-  if (windowWidth > 414 && windowWidth < 769) {
-    var n = 3;
-  } else if (windowWidth > 768 && windowWidth < 961) {
-    var n = 4;
-  } else if (windowWidth > 960 && windowWidth < 1281) {
-    var n = 5;
-  } else if (windowWidth > 1280) {
-    var n = 6;
-  };
+  function calcGrid() {
+    windowWidth = window.innerWidth;
 
-  if (n === 3) { // max 768 width
-    var gutter = (24 / 768) * windowWidth;
-  } else if (n === 4) { // min 769 -> max 960 width
-    var gutter = (36 / 960) * windowWidth;
-  } else if (n === 5) { // min 961 -> max 1280 width
-    var gutter = (40 / 1280) * windowWidth;
-  } else if (n === 6) { // min 1281 -> max 1600 width
-    if (windowWidth <= 1600) {
-      var gutter = (50 / 1600) * windowWidth;
-    } else {
-      var gutter = (50 / 1600) * 1600;
-    }
+    if (windowWidth > 414 && windowWidth < 769) {
+      n = 3;
+    } else if (windowWidth > 768 && windowWidth < 961) {
+      n = 4;
+    } else if (windowWidth > 960 && windowWidth < 1281) {
+      n = 5;
+    } else if (windowWidth > 1280) {
+      n = 6;
+    };
+
+    if (n === 3) { // max 768 width
+      gutter = (24 / 768) * windowWidth;
+    } else if (n === 4) { // min 769 -> max 960 width
+      gutter = (36 / 960) * windowWidth;
+    } else if (n === 5) { // min 961 -> max 1280 width
+      gutter = (40 / 1280) * windowWidth;
+    } else if (n === 6) { // min 1281 -> max 1600 width
+      if (windowWidth <= 1600) {
+        gutter = (50 / 1600) * windowWidth;
+      } else {
+        gutter = (50 / 1600) * 1600;
+      }
+    };
   };
 
 
@@ -149,8 +157,8 @@ $(document).ready(function() {
           }
         }
       }
-    }
-  }
+    };
+  };
 
   // listen for menu radio button click
 
@@ -324,11 +332,18 @@ $(document).ready(function() {
 
 
   // initial function calls
+  calcGrid();
   getData();
 
   $(window).resize(function() {
     if (windowWidth < 415) {
       sizeImgBlock();
+    } else {
+      var oldN = n;
+      calcGrid();
+      if (oldN !== n) {
+        getData();
+      }
     }
   });
 
