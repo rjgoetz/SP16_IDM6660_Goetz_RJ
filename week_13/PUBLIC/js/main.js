@@ -336,14 +336,19 @@ $(document).ready(function() {
   getData();
 
   $(window).resize(function() {
-    if (windowWidth < 415) {
+    var oldN = n;
+    var oldWindow = windowWidth;
+    console.log(oldN + " " + oldWindow);
+    calcGrid();
+    console.log(windowWidth);
+    if (oldN !== n) {
+      getData();
+    } else if (oldWindow > 414 && windowWidth < 415) {
+      getData();
+    } else if (windowWidth > 414 && oldWindow < 415) {
+      getData();
+    } else if (windowWidth < 415) {
       sizeImgBlock();
-    } else {
-      var oldN = n;
-      calcGrid();
-      if (oldN !== n) {
-        getData();
-      }
     }
   });
 
