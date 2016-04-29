@@ -41,7 +41,8 @@ $(document).ready(function() {
     windowWidth,
     n,
     gutter,
-    mobile
+    mobile,
+    maxWidth = 1600
   ;
 
   function calcGrid() {
@@ -76,6 +77,7 @@ $(document).ready(function() {
         gutter = (50 / 1600) * 1600;
       }
     };
+
   };
 
 
@@ -125,45 +127,48 @@ $(document).ready(function() {
 
   };
 
+  // size image
+  function sizeImgLayout() {
+    $()
+  }
+
   // check for last in row by looping through photos
   function checkLastInRow() {
     if (mobile === false) {
-        for (var i = 1; i < $("section div").length; i++) {
-        pictures = $("section div");
-        prevPicturePos = $(pictures[i-1]).position();
+        var pictures = $("section div");
 
-        // get floating point width of previous picture
-        var rect1 = $(pictures)[i-1].getBoundingClientRect();
-        prevPictureWidth = rect1.right - rect1.left;
+        for (var i = 1; i < pictures.length; i++) {
+          var
+            prevItemRect = pictures[i-1].getBoundingClientRect(),
+            prevItemMargin = pictures[i-1].style.marginRight,
+            currItemRect = pictures[i].getBoundingClientRect(),
+            currItemWidth = currItemRect.right - currItemRect.left,
+            totalWidth = prevItemRect.right + currItemWidth + gutter
+          ;
 
-        // get floating point width of current picture
-        var rect2 = $(pictures)[i].getBoundingClientRect();
-        curPictureWidth = rect2.right - rect2.left;
-        curPicturePos = $(pictures[i]).position();
+          console.log(windowWidth);
 
-        // find margin-right value
-        var margin = $(pictures[i-1]).css("margin-right");
+          // recalibrate previous item right position for viewport widths greater than page width
+          if (windowWidth > 1600) {
+            totalWidth -= ((windowWidth - 1600) / 2);
+            if (totalWidth > .96 * maxWidth && totalWidth <= maxWidth) {
+              pictures[i].setAttribute("style", "margin-right:0");
+            }
+          } else if (totalWidth > .96 * windowWidth && totalWidth <= windowWidth) {
+            pictures[i].setAttribute("style", "margin-right:0");
+          };
 
-        totalWidth = (prevPicturePos.left + prevPictureWidth + gutter + curPictureWidth);
-        if (windowWidth > 1600) {
-          totalWidth -= ((windowWidth - 1600) / 2);
+          // total width of items in row
+          console.log(i + " " + totalWidth);
+
+          // clear float if previous item has margin-right 0px property
+          if(prevItemMargin === "0px") {
+            pictures[i].setAttribute("style", "clear: both");
+          };
+
+
         }
-
-        if (windowWidth <= 1600) {
-          if (totalWidth > (.95 * windowWidth) && totalWidth <= windowWidth) {
-            $(pictures[i]).css("margin-right", "0");
-          } else if (margin === "0px") {
-            $(pictures[i]).css("clear", "both");
-          }
-        } else if (windowWidth > 1600) {
-          if (totalWidth > 1584 && totalWidth <= 1600) {
-            $(pictures[i]).css("margin-right", "0");
-          } else if (margin === "0px") {
-            $(pictures[i]).css("clear", "both");
-
-          }
-        }
-      }
+        
     };
   };
 
@@ -339,19 +344,17 @@ $(document).ready(function() {
 
 
   // initial function calls
-  calcGrid();
   getData();
+
+  calcGrid();
 
   $(window).resize(function() {
     var oldN = n;
     var oldMobile = mobile;
-    console.log(oldMobile);
     calcGrid();
-    console.log(mobile);
     if (oldN !== n) {
       getData();
     } else if (oldMobile !== mobile) {
-      console.log("change");
       getData();
     } else if (mobile === true) {
       sizeImgBlock();
