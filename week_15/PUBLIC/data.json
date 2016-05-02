@@ -1,0 +1,191 @@
+[
+  {
+    "name" : "Harold's Birthday - October 27, 2014",
+    "photoDate" : "2014-10-27",
+    "tags" : ["birthday", "sleeping"],
+    "src" : "img/harold1.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Car Ride",
+    "photoDate" : "2014-10-30",
+    "tags" : ["milestone", "sleeping"],
+    "src" : "img/harold2.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Morning at Home",
+    "photoDate" : "2014-10-31",
+    "tags" : ["milestone"],
+    "src" : "img/harold3.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "On the Couch with Mom",
+    "photoDate" : "2014-11-01",
+    "tags" : ["mom"],
+    "src" : "img/harold6.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold's Baptism",
+    "photoDate" : "2014-11-06",
+    "tags" : ["mom", "dad", "milestone"],
+    "src" : "img/harold8.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Matching Beanies",
+    "photoDate" : "2014-11-27",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold16.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Harold with Grandpa Goetz",
+    "photoDate" : "2014-11-27",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold17.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "1 Month Old",
+    "photoDate" : "2014-11-29",
+    "tags" : ["milestone"],
+    "src" : "img/harold18.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Four Generations",
+    "photoDate" : "2014-11-29",
+    "tags" : ["family", "sleeping"],
+    "src" : "img/harold19.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold and Uncle David",
+    "photoDate" : "2014-11-30",
+    "tags" : ["family"],
+    "src" : "img/harold20.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Christmas and Grandpa Miller",
+    "photoDate" : "2014-12-25",
+    "tags" : ["family", "milestone"],
+    "src" : "img/harold21.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Visiting the Fischer's",
+    "photoDate" : "2014-12-20",
+    "tags" : ["friends"],
+    "src" : "img/harold22.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Harold and Grandma Miller",
+    "photoDate" : "2014-12-18",
+    "tags" : ["family"],
+    "src" : "img/harold23.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Mom and Harold",
+    "photoDate" : "2015-01-04",
+    "tags" : ["mom", "sleeping"],
+    "src" : "img/harold26.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Dreaded Tummy Time",
+    "photoDate" : "2015-01-17",
+    "tags" : ["milestone"],
+    "src" : "img/harold24.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Smile",
+    "photoDate" : "2015-01-11",
+    "tags" : ["milestone", "smiling"],
+    "src" : "img/harold25.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Playing with a Ball",
+    "photoDate" : "2015-02-22",
+    "tags" : ["playing"],
+    "src" : "img/harold27.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Playing In My Saucer",
+    "photoDate" : "2015-02-25",
+    "tags" : ["playing"],
+    "src" : "img/harold28.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Grabbing My Feet",
+    "photoDate" : "2015-03-17",
+    "tags" : ["playing"],
+    "src" : "img/harold29.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "In My Bouncer",
+    "photoDate" : "2015-03-31",
+    "tags" : ["playing", "smiling"],
+    "src" : "img/harold30.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Harold and Dad",
+    "photoDate" : "2015-04-15",
+    "tags" : ["dad", "smiling"],
+    "src" : "img/harold31.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "First Easter with My Family",
+    "photoDate" : "2015-04-05",
+    "tags" : ["family", "mom"],
+    "src" : "img/harold32.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Shopping with Mom",
+    "photoDate" : "2015-04-21",
+    "tags" : ["smiling", "sitting"],
+    "src" : "img/harold33.jpg",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "With Mom in Dubuque",
+    "photoDate" : "2015-04-18",
+    "tags" : ["mom"],
+    "src" : "img/harold34.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Crashing Out",
+    "photoDate" : "2015-04-21",
+    "tags" : ["sleeping"],
+    "src" : "img/harold35.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Sitting Up and Eating",
+    "photoDate" : "2015-04-23",
+    "tags" : ["eating"],
+    "src" : "img/harold36.jpg",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Cuteness Overload",
+    "photoDate" : "2015-04-23",
+    "tags" : ["smiling"],
+    "src" : "img/harold37.jpg",
+    "layout" : "portrait"
+  }
+]

@@ -1,0 +1,53 @@
+@media screen and (min-width: 769px) {
+
+  header {
+    margin: auto;
+    max-width: 1600px;
+    & > i {
+      cursor: pointer;
+    }
+    nav {
+      width: ((213 / 960) + (36 / 960)) * 100%;
+      & > i {
+        cursor: pointer;
+      }
+      ul li label i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  section {
+    margin: 3em auto 0;
+    max-width: 1600px;
+    div {
+      margin-bottom: (36 / 960) * 100%;
+      margin-right: (36 / 960) * 100%;
+    }
+    .landscape {
+      width: (462 / 960) * 100%;
+    }
+    .portrait {
+      width: (213 / 960) * 100%;
+    }
+  }
+
+  .lightbox {
+    img {
+      height: 85%;
+      width: auto;
+    }
+    .lightbox-nav {
+      i {
+        padding-left: 3rem;
+        text-align: right;
+        width: 25%;
+        &:last-of-type {
+          padding-right: 3rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+}

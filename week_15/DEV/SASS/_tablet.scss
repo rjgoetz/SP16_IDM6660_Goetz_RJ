@@ -1,0 +1,62 @@
+@media screen and (min-width: 415px) {
+
+  header {
+    border-bottom: 1px solid $black;
+    &>i {
+      width: auto;
+    }
+    .fa {
+      font-size: 2em;
+      line-height: 1.3333em;
+      padding: 1.5rem;
+    }
+    h1 {
+      font-size: 2em;
+      line-height: 1.33333em;
+      text-align: left;
+      width: auto;
+    }
+    nav {
+      width: 50%;
+      ul {
+        li {
+          font-size: 1.75em;
+          line-height: 2.3333em;
+          padding-bottom: 1.5rem;
+          input[type="radio"] {
+            & + label .fa-circle-o {
+              font-size: 1.75rem;
+              line-height: 2.3333em;
+              padding: 0 1.5em 0 0.75em;
+            }
+            & + label .fa-dot-circle-o {
+              font-size: 1.75rem;
+              line-height: 2.3333em;
+              padding: 0 1.5em 0 0.75em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    margin-top: 3em;
+    div {
+      border: none;
+      margin-bottom: (24 / 768) * 100%;
+      margin-right: (24 / 768) * 100%;
+      img {
+        position: static;
+        width: 100%;
+      }
+    }
+    .landscape {
+      width: (504 / 768) * 100%;
+    }
+    .portrait {
+      width: (240 / 768) * 100%;
+    }
+  }
+
+}
