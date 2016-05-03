@@ -2301,20 +2301,23 @@ body {
   background: #fcfcfc; }
 
 header {
-  background-color: #fcfcfc;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100; }
   header h1 {
+    background-color: #fcfcfc;
     font-size: 1.625em;
     line-height: 1.84615384615385em;
     margin: 0;
-    padding-top: 0.75rem;
+    padding: 0.75rem 0;
     text-align: center;
     text-transform: uppercase;
     width: 100%; }
   header div {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid rgba(29, 33, 40, 0.05);
+    border-top: 1px solid rgba(29, 33, 40, 0.05);
     height: 3em;
     position: relative; }
     header div > .fa {
@@ -2332,7 +2335,7 @@ header {
         line-height: 1.5em;
         margin: 0.75rem 1em 0.75rem 0; }
   header nav {
-    background-color: #1d2128;
+    background-color: rgba(29, 33, 40, 0.85);
     bottom: 3rem;
     color: #fcfcfc;
     display: none;
@@ -2420,7 +2423,7 @@ section {
 @media screen and (min-width: 415px) {
   header h1 {
     font-size: 2em;
-    line-height: 1.33333em; }
+    line-height: 1.5em; }
   header nav ul li {
     padding: 0.5em 2em 0.5em 0.75em; }
 
@@ -2472,8 +2475,7 @@ section {
     header h1 {
       font-size: 2.5rem;
       line-height: 1.2em;
-      margin: 1.5rem 0;
-      padding: 0; }
+      padding: 1.5rem 0; }
     header div {
       margin: auto;
       max-width: 1600px; }

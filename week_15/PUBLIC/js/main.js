@@ -10,13 +10,7 @@ $(document).ready(function() {
     } else {
       $("header div > i").attr("class", "fa fa-plus");
     }
-  });
-
-  $(document).on("click", function(event) {
-    if(!(event.target).closest("header")) {
-      $("header nav").hide();
-    }
-  });
+  });  
 
   // set filter in selection bar (footer) and format text
   function setHeaderFilter() {

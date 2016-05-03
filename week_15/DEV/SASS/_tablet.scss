@@ -3,56 +3,14 @@
   header {
     h1 {
       font-size: 2em;
-      line-height: 1.33333em;
+      line-height: 1.5em;
     }
     nav ul li {
       padding: 0.5em 2em 0.5em 0.75em;
     }
   }
 
-
-  // header {
-  //   border-bottom: 1px solid $black;
-  //   &>i {
-  //     width: auto;
-  //   }
-  //   .fa {
-  //     font-size: 2em;
-  //     line-height: 1.3333em;
-  //     padding: 1.5rem;
-  //   }
-  //   h1 {
-  //     font-size: 2em;
-  //     line-height: 1.33333em;
-  //     text-align: left;
-  //     width: auto;
-  //   }
-  //   nav {
-  //     width: 50%;
-  //     ul {
-  //       li {
-  //         font-size: 1.75em;
-  //         line-height: 2.3333em;
-  //         padding-bottom: 1.5rem;
-  //         input[type="radio"] {
-  //           & + label .fa-circle-o {
-  //             font-size: 1.75rem;
-  //             line-height: 2.3333em;
-  //             padding: 0 1.5em 0 0.75em;
-  //           }
-  //           & + label .fa-dot-circle-o {
-  //             font-size: 1.75rem;
-  //             line-height: 2.3333em;
-  //             padding: 0 1.5em 0 0.75em;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
   section {
-    // margin-top: 3em;
     div {
       border: none;
       margin-bottom: (24 / 768) * 100%;
