@@ -3,7 +3,6 @@ $(document).ready(function() {
   // toggle header filter menu
   $(".fa-plus").click(function() {
     $("header nav").toggle();
-    $("header p").toggle();
 
     if ($("header div > i").attr("class") === "fa fa-plus") {
       $("header div > i").attr("class", "fa fa-times");
