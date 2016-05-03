@@ -2212,16 +2212,17 @@ html {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before, header nav:before, section:before,
+.clearfix:before, header nav:before, section:before, .no-js .no-js-gallery .row:before,
 .clearfix:after,
 header nav:after,
-section:after {
+section:after,
+.no-js .no-js-gallery .row:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.clearfix:after, header nav:after, section:after {
+.clearfix:after, header nav:after, section:after, .no-js .no-js-gallery .row:after {
   clear: both; }
 
 /* ==========================================================================
@@ -2387,6 +2388,8 @@ section {
       font-size: 3em;
       text-align: center;
       width: 100%; }
+  section .no-js-gallery {
+    display: none; }
 
 .lightbox {
   background-color: rgba(29, 33, 40, 0.96);
@@ -2419,6 +2422,39 @@ section {
     text-align: center; }
   .lightbox .lightbox-nav {
     display: none; }
+
+.no-js header > div {
+  display: none; }
+.no-js section {
+  margin-top: 4.5rem; }
+.no-js #loader {
+  display: none; }
+.no-js .no-js-gallery {
+  border: none;
+  display: block;
+  float: none;
+  overflow: auto;
+  position: static;
+  width: auto; }
+  .no-js .no-js-gallery .row {
+    border: none;
+    float: none;
+    margin-bottom: 1.5rem;
+    overflow: auto;
+    position: static;
+    width: auto; }
+    .no-js .no-js-gallery .row a {
+      display: block;
+      float: left;
+      padding-right: 0.75rem;
+      width: 33.3333%; }
+      .no-js .no-js-gallery .row a img {
+        cursor: auto;
+        display: block;
+        position: static;
+        width: 100%; }
+      .no-js .no-js-gallery .row a:last-of-type {
+        padding-right: 0; }
 
 @media screen and (min-width: 415px) {
   header h1 {

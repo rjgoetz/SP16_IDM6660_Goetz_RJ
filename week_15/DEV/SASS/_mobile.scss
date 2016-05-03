@@ -115,6 +115,9 @@ section {
       width: 100%;
     }
   }
+  .no-js-gallery {
+    display: none;
+  }
 }
 
 .lightbox {
@@ -151,5 +154,51 @@ section {
   }
   .lightbox-nav {
     display: none;
+  }
+}
+
+.no-js {
+  header {
+    &>div {
+      display: none;
+    }
+  }
+  section {
+    margin-top: 4.5rem;
+  }
+  #loader {
+    display: none;
+  }
+  .no-js-gallery {
+    border: none;
+    display: block;
+    float: none;
+    overflow: auto;
+    position: static;
+    width: auto;
+    .row {
+      border: none;
+      float: none;
+      margin-bottom: 1.5rem;
+      overflow: auto;
+      position: static;
+      width: auto;
+      @extend .clearfix;
+      a {
+        display: block;
+        float: left;
+        padding-right: 0.75rem;
+        width: 33.3333%;
+        img {
+          cursor: auto;
+          display: block;
+          position: static;
+          width: 100%;
+        }
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
   }
 }
