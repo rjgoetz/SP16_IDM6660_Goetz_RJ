@@ -434,7 +434,7 @@
 .fa-times-circle-o:before {
   content: "\f05c"; }
 
-.fa-check-circle-o:before {
+.fa-check-circle-o:before, header nav ul li input[type="radio"]:checked + label i:before {
   content: "\f05d"; }
 
 .fa-ban:before {
@@ -1259,7 +1259,7 @@
 .fa-toggle-left:before, .fa-caret-square-o-left:before {
   content: "\f191"; }
 
-.fa-dot-circle-o:before, header nav ul li input[type="radio"]:checked + label i:before {
+.fa-dot-circle-o:before {
   content: "\f192"; }
 
 .fa-wheelchair:before {
@@ -2212,14 +2212,16 @@ html {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, header nav:before, section:before,
+.clearfix:after,
+header nav:after,
+section:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.clearfix:after {
+.clearfix:after, header nav:after, section:after {
   clear: both; }
 
 /* ==========================================================================
@@ -2299,94 +2301,89 @@ body {
   background: #fcfcfc; }
 
 header {
-  position: relative; }
-  header > i {
-    padding: 0 5%;
-    text-align: center;
-    width: 15%; }
-  header .fa {
-    display: block;
-    float: left;
+  background-color: #fcfcfc;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; }
+  header h1 {
     font-size: 1.625em;
     line-height: 1.84615384615385em;
-    padding: 1.5rem 0; }
+    margin: 0;
+    padding-top: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%; }
+  header div {
+    height: 3em;
+    position: relative; }
+    header div > .fa {
+      display: block;
+      line-height: 1.5em;
+      padding: 0.75rem 0 0.75rem 1rem;
+      text-align: left;
+      width: 100%;
+      position: absolute;
+      z-index: 101; }
+    header div div p {
+      margin: 0;
+      text-align: center; }
+      header div div p .fa {
+        line-height: 1.5em;
+        margin: 0.75rem 1em 0.75rem 0; }
   header nav {
-    background: rgba(29, 33, 40, 0.95);
+    background-color: #1d2128;
+    bottom: 3rem;
     color: #fcfcfc;
     display: none;
-    float: left;
-    position: absolute;
-    width: 50%;
-    z-index: 99; }
-    header nav .fa-times {
-      float: none;
-      text-align: center; }
-    header nav h2 {
-      border-top: 1px solid #fcfcfc;
-      font-size: 1.625em;
-      letter-spacing: 1px;
-      line-height: 1.84615384615385em;
-      margin: 0;
-      padding: 0.75rem 0;
-      text-align: center;
-      text-transform: uppercase; }
+    padding: 0.75em 0;
+    width: 100%; }
     header nav ul {
       margin: 0;
       padding: 0; }
       header nav ul li {
-        font-size: 1.25em;
-        line-height: 1.2em;
+        float: left;
         list-style-type: none;
-        padding: 0 0 1.2em 0.75em; }
+        padding: 0.5em 0 0.5em 0.75em;
+        width: 33.3333%; }
         header nav ul li input[type="radio"] {
           display: none; }
           header nav ul li input[type="radio"] + label .fa-circle-o {
-            float: right;
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            padding: 0 0.75em 0 0;
-            width: 35px; }
-          header nav ul li input[type="radio"] + label .fa-dot-circle-o, header nav ul li input[type="radio"]:checked + label i {
-            float: right;
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            padding: 0 0.75em 0 0;
-            width: 35px; }
-  header h1 {
-    float: left;
-    font-size: 1.625em;
-    line-height: 1.84615384615385em;
-    margin: 0;
-    padding: 1.5rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    width: 85%; }
+            float: left;
+            line-height: 1.5em;
+            padding: 0 0.75em 0 0.25em; }
+          header nav ul li input[type="radio"] + label .fa-check-circle-o, header nav ul li input[type="radio"]:checked + label i {
+            float: left;
+            line-height: 1.5em;
+            padding: 0 0.75em 0 0.25em; }
 
-section div {
-  border-right: 1px solid #fcfcfc;
-  border-bottom: 1px solid #fcfcfc;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  width: 33.3333%; }
-  section div:nth-child(3n+3) {
-    border-right: none; }
-  section div img {
-    cursor: pointer;
-    display: block;
+section {
+  margin-top: 7.5em; }
+  section div {
+    border-right: 1px solid #fcfcfc;
+    border-bottom: 1px solid #fcfcfc;
+    float: left;
+    overflow: hidden;
     position: relative;
-    right: 30%;
-    width: 160%; }
-  section div figure {
-    display: none; }
-section #loader {
-  padding-top: 7.5em;
-  width: 100%; }
-  section #loader i {
-    color: #1d2128;
-    font-size: 3em;
-    text-align: center;
+    width: 33.3333%; }
+    section div:nth-child(3n+3) {
+      border-right: none; }
+    section div img {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      right: 30%;
+      width: 160%; }
+    section div figure {
+      display: none; }
+  section #loader {
+    padding-top: 7.5em;
     width: 100%; }
+    section #loader i {
+      color: #1d2128;
+      font-size: 3em;
+      text-align: center;
+      width: 100%; }
 
 .lightbox {
   background-color: rgba(29, 33, 40, 0.96);
@@ -2394,7 +2391,7 @@ section #loader {
   height: 100%;
   top: 0;
   width: 100%;
-  z-index: 100; }
+  z-index: 102; }
   .lightbox i {
     color: #fcfcfc;
     cursor: pointer;
@@ -2421,50 +2418,27 @@ section #loader {
     display: none; }
 
 @media screen and (min-width: 415px) {
-  header {
-    border-bottom: 1px solid #1d2128; }
-    header > i {
-      width: auto; }
-    header .fa {
-      font-size: 2em;
-      line-height: 1.3333em;
-      padding: 1.5rem; }
-    header h1 {
-      font-size: 2em;
-      line-height: 1.33333em;
-      text-align: left;
-      width: auto; }
-    header nav {
-      width: 50%; }
-      header nav ul li {
-        font-size: 1.75em;
-        line-height: 2.3333em;
-        padding-bottom: 1.5rem; }
-        header nav ul li input[type="radio"] + label .fa-circle-o {
-          font-size: 1.75rem;
-          line-height: 2.3333em;
-          padding: 0 1.5em 0 0.75em; }
-        header nav ul li input[type="radio"] + label .fa-dot-circle-o, header nav ul li input[type="radio"]:checked + label i {
-          font-size: 1.75rem;
-          line-height: 2.3333em;
-          padding: 0 1.5em 0 0.75em; }
+  header h1 {
+    font-size: 2em;
+    line-height: 1.33333em; }
+  header nav ul li {
+    padding: 0.5em 2em 0.5em 0.75em; }
 
-  section {
-    margin-top: 3em; }
-    section div {
-      border: none;
-      margin-bottom: 3.125%;
-      margin-right: 3.125%; }
-      section div img {
-        position: static;
-        width: 100%; }
-    section .landscape {
-      width: 65.625%; }
-    section .portrait {
-      width: 31.25%; } }
+  section div {
+    border: none;
+    margin-bottom: 3.125%;
+    margin-right: 3.125%; }
+    section div img {
+      position: static;
+      width: 100%; }
+  section .landscape {
+    width: 65.625%; }
+  section .portrait {
+    width: 31.25%; } }
 @media screen and (min-width: 600px) {
-  header nav {
-    width: 34.375%; }
+  header nav ul li {
+    padding-right: 2.5em;
+    width: 25%; }
 
   .lightbox i {
     padding: 0 1.5em; }
@@ -2494,19 +2468,44 @@ section #loader {
         text-align: right; } }
 @media screen and (min-width: 769px) {
   header {
-    margin: auto;
-    max-width: 1600px; }
-    header > i {
-      cursor: pointer; }
+    margin: 0 auto 1.5rem; }
+    header h1 {
+      font-size: 2.5rem;
+      line-height: 1.2em;
+      margin: 1.5rem 0;
+      padding: 0; }
+    header div {
+      margin: auto;
+      max-width: 1600px; }
+      header div > .fa {
+        cursor: pointer;
+        font-size: 1.25em;
+        line-height: 1.2em;
+        padding: 0.75rem 0 0.75rem 1.5rem; }
+      header div div p {
+        font-size: 1.25em;
+        line-height: 1.2em; }
+        header div div p .fa {
+          line-height: 1.2em; }
     header nav {
-      width: 25.9375%; }
-      header nav > i {
-        cursor: pointer; }
-      header nav ul li label i {
-        cursor: pointer; }
+      margin: auto;
+      max-width: 1600px; }
+      header nav ul li {
+        font-size: 1.25em;
+        line-height: 1.2em;
+        padding: 1em 0 1em 0.75rem;
+        width: 20%; }
+        header nav ul li label {
+          cursor: pointer; }
+        header nav ul li input[type="radio"] + label .fa-circle-o {
+          line-height: 1.2em;
+          padding: 0 0.75rem 0 0.75rem; }
+        header nav ul li input[type="radio"] + label .fa-check-circle-o, header nav ul li input[type="radio"]:checked + label i {
+          line-height: 1.2em;
+          padding: 0 0.75rem 0 0.75rem; }
 
   section {
-    margin: 3em auto 0;
+    margin: 10.5em auto 0;
     max-width: 1600px; }
     section div {
       margin-bottom: 3.75%;
@@ -2527,8 +2526,8 @@ section #loader {
       padding-right: 3rem;
       text-align: left; } }
 @media screen and (min-width: 961px) {
-  header nav {
-    width: 20.625%; }
+  header nav ul li {
+    width: 16.6666%; }
 
   section div {
     margin-bottom: 3.125%;

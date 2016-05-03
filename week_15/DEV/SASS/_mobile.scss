@@ -3,87 +3,84 @@ body {
 }
 
 header {
-  position: relative;
-  &>i {
-    padding: 0 5%;
-    text-align: center;
-    width: 15%;
-  }
-  .fa {
-    display: block;
-    float: left;
+  background-color: $white; //sticky
+  position: fixed; //sticky
+  top: 0; //sticky
+  width: 100%; //sticky
+  z-index: 100; //sticky
+  h1 {
     font-size: 1.625em;
     line-height: 1.84615384615385em;
-    padding: 1.5rem 0;
+    margin: 0;
+    padding-top: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
   }
-  nav {
-    background: rgba($black, 0.95);
-    color: $white;
-    display: none;
-    float: left;
-    position: absolute;
-    width: 50%;
-    z-index: 99;
-    .fa-times {
-      float: none;
-      text-align: center;
+  div {
+    height: 3em;
+    position: relative;
+    &>.fa {
+      display: block;
+      line-height: 1.5em;
+      padding: 0.75rem 0 0.75rem 1rem;
+      text-align: left;
+      width: 100%;
+      position: absolute;
+      z-index: 101;
     }
-    h2 {
-      border-top: 1px solid $white;
-      font-size: 1.625em;
-      letter-spacing: 1px;
-      line-height: 1.84615384615385em;
-      margin: 0;
-      padding: 0.75rem 0;
-      text-align: center;
-      text-transform: uppercase;
+    div {
+      p {
+        margin: 0;
+        text-align: center;
+        .fa {
+          line-height: 1.5em;
+          margin: 0.75rem 1em 0.75rem 0;
+        }
+      }
     }
+  }
 
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        font-size: 1.25em;
-        line-height: 1.2em;
-        list-style-type: none;
-        padding: 0 0 1.2em 0.75em;
-        input[type="radio"] {
-          display: none;
-          & + label .fa-circle-o {
-            float: right;
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            padding: 0 0.75em 0 0;
-            width: 35px;
-          }
-          & + label .fa-dot-circle-o {
-            float: right;
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            padding: 0 0.75em 0 0;
-            width: 35px;
-          }
-          &:checked + label i {
-            @extend .fa-dot-circle-o;
+  nav {
+      background-color: $black;
+      bottom: 3rem;
+      color: $white;
+      display: none;
+      padding: 0.75em 0;
+      width: 100%;
+      @extend .clearfix;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          float: left;
+          list-style-type: none;
+          padding: 0.5em 0 0.5em 0.75em;
+          width: 33.3333%;
+          input[type="radio"] {
+            display: none;
+            & + label .fa-circle-o {
+              float: left;
+              line-height: 1.5em;
+              padding: 0 0.75em 0 0.25em;
+            }
+            & + label .fa-check-circle-o {
+              float: left;
+              line-height: 1.5em;
+              padding: 0 0.75em 0 0.25em;
+            }
+            &:checked + label i {
+              @extend .fa-check-circle-o;
+            }
           }
         }
       }
     }
-
   }
-  h1 {
-    float: left;
-    font-size: 1.625em;
-    line-height: 1.84615384615385em;
-    margin: 0;
-    padding: 1.5rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    width: 85%;
-  }
-}
 
 section {
+  margin-top: 7.5em; //sticky
+  @extend .clearfix;
   div {
     border-right: 1px solid $white;
     border-bottom: 1px solid $white;
@@ -123,7 +120,7 @@ section {
   height: 100%;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 102;
   i {
     color: $white;
     cursor: pointer;

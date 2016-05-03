@@ -1,24 +1,61 @@
 @media screen and (min-width: 769px) {
 
   header {
-    margin: auto;
-    max-width: 1600px;
-    & > i {
-      cursor: pointer;
+    margin: 0 auto 1.5rem;
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.2em;
+      margin: 1.5rem 0;
+      padding: 0;
+    }
+    div {
+      margin: auto;
+      max-width: 1600px;
+      &>.fa {
+        cursor: pointer;
+        font-size: 1.25em;
+        line-height: 1.2em;
+        padding: 0.75rem 0 0.75rem 1.5rem;
+      }
+      div {
+        p {
+          font-size: 1.25em;
+          line-height: 1.2em;
+          .fa {
+            line-height: 1.2em;
+          }
+        }
+      }
     }
     nav {
-      width: ((213 / 960) + (36 / 960)) * 100%;
-      & > i {
-        cursor: pointer;
-      }
-      ul li label i {
-        cursor: pointer;
+      margin: auto;
+      max-width: 1600px;
+      ul li {
+        font-size: 1.25em;
+        line-height: 1.2em;
+        padding: 1em 0 1em 0.75rem;
+        width: 20%;
+        label {
+          cursor: pointer;
+        }
+        input[type="radio"] {
+          & + label .fa-circle-o {
+            line-height: 1.2em;
+            padding: 0 0.75rem 0 0.75rem;
+
+          }
+          & + label .fa-check-circle-o {
+            line-height: 1.2em;
+            padding: 0 0.75rem 0 0.75rem;
+
+          }
+        }
       }
     }
   }
 
   section {
-    margin: 3em auto 0;
+    margin: 10.5em auto 0;
     max-width: 1600px;
     div {
       margin-bottom: (36 / 960) * 100%;

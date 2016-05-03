@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-  // toggle menu
-  $(".fa-bars").click(function() {
+  // toggle header filter menu
+  $(".fa-plus").click(function() {
     $("header nav").toggle();
-  });
+    $("header p").toggle();
 
-  $("nav > .fa-times").click(function() {
-    $("header nav").toggle();
+    if ($("header div > i").attr("class") === "fa fa-plus") {
+      $("header div > i").attr("class", "fa fa-times");
+    } else {
+      $("header div > i").attr("class", "fa fa-plus");
+    }
   });
 
   $(document).on("click", function(event) {
@@ -15,13 +18,12 @@ $(document).ready(function() {
     }
   });
 
-
-  // checkbox toggle style
-  $("label i").click(function() {
-    $(this).toggleClass("fa-square-o");
-    $(this).toggleClass("fa-check-square-o");
-  });
-
+  // set filter in selection bar (footer) and format text
+  function setHeaderFilter() {
+    var filterFormat = filter.charAt(0).toUpperCase() + filter.slice(1);
+    $("header p").html("<i class='fa fa-check-circle-o'></i><span></span>");
+    $("header span").html(filterFormat);
+  }
 
   // // // // // // // // // // // // // // // // // //
   // resize image square height for mobile version //
@@ -33,7 +35,6 @@ $(document).ready(function() {
 
     $(imgBlock).css("height", height);
   };
-
 
   // // // // // // // //
   // grid calculations
@@ -179,6 +180,8 @@ $(document).ready(function() {
     // get initial filter setting
     getFilter();
 
+    setHeaderFilter();
+
     // reset output
     output = "";
 
@@ -279,7 +282,7 @@ $(document).ready(function() {
 
   // initiate lightbox after ajax loads
   $(document).ajaxComplete(function() {
-    $("div").on("click", "img", function() {
+    $("section div").on("click", "img", function() {
 
       url = $(this).attr("src");
       figCaption = $(this).next();

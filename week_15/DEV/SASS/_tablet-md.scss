@@ -1,7 +1,12 @@
 @media screen and (min-width: 600px) {
   header {
-    nav {
-      width: ((240 / 768) + (24 / 768)) * 100%;
+    // nav {
+    //   width: ((240 / 768) + (24 / 768)) * 100%;
+    // }
+
+    nav ul li {
+      padding-right: 2.5em;
+      width: 25%;
     }
   }
 
