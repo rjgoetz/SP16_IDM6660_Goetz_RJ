@@ -10,7 +10,7 @@ $(document).ready(function() {
     } else {
       $("header div > i").attr("class", "fa fa-plus");
     }
-  });  
+  });
 
   // set filter in selection bar (footer) and format text
   function setHeaderFilter() {
@@ -115,11 +115,6 @@ $(document).ready(function() {
 
   };
 
-  // size image
-  function sizeImgLayout() {
-    $()
-  }
-
   // check for last in row by looping through photos
   function checkLastInRow() {
     if (mobile === false) {
@@ -153,7 +148,6 @@ $(document).ready(function() {
           if(prevItemMargin === "0px") {
             pictures[i].setAttribute("style", "clear: both");
           };
-
 
         }
 
@@ -265,7 +259,7 @@ $(document).ready(function() {
     var urlArray = [];
 
     for (var i = 0; i < photosArray.length; i++) {
-      var tempURL = $(photosArray[i]).attr("src");
+      var tempURL = $(photosArray[i]).attr("data-original");
       urlArray.push(tempURL);
     }
 
@@ -278,7 +272,7 @@ $(document).ready(function() {
   $(document).ajaxComplete(function() {
     $("section div").on("click", "img", function() {
 
-      url = $(this).attr("src");
+      url = $(this).attr("data-original");
       figCaption = $(this).next();
       captionText = figCaption.text();
       photosArray = $("section div img");
@@ -305,7 +299,7 @@ $(document).ready(function() {
     $(".lightbox").remove();
     boxOutput = "";
     if (imgIndex < (photosArray.length - 1)) {
-      url = $(photosArray[imgIndex + 1]).attr("src");
+      url = $(photosArray[imgIndex + 1]).attr("data-original");
       captionText = $(captionArray[imgIndex + 1]).text();
       imgLocation();
       lightbox();
@@ -321,7 +315,7 @@ $(document).ready(function() {
     boxOutput = "";
 
     if (imgIndex > 0) {
-      url = $(photosArray[imgIndex - 1]).attr("src");
+      url = $(photosArray[imgIndex - 1]).attr("data-original");
       captionText = $(captionArray[imgIndex - 1]).text();
       imgLocation();
       lightbox();
