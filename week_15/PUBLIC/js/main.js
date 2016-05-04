@@ -88,7 +88,7 @@ $(document).ready(function() {
   function createData(insert) {
 
     output += "<div class='" + insert.layout + "'>";
-    output += "<img class='lazy' data-original='" + insert.src + "'>";
+    output += "<img class='lazy' data-original='" + insert.src + "-thb.jpg" + "'>";
     output += "<figure>";
     output += "<figcaption>" + insert.name + "</figcaption>";
     output += "</figure>";
@@ -259,6 +259,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < photosArray.length; i++) {
       var tempURL = $(photosArray[i]).attr("data-original");
+      tempURL = tempURL.substring(0, (tempURL.length - 8)) + ".jpg";
       urlArray.push(tempURL);
     }
 
@@ -271,7 +272,11 @@ $(document).ready(function() {
   $(document).ajaxComplete(function() {
     $("section div").on("click", "img", function() {
 
-      url = $(this).attr("data-original");
+      fullUrl = $(this).attr("data-original");
+      console.log(fullUrl);
+      url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
+      console.log(url);
+      // url = $(this).attr("data-original");
       figCaption = $(this).next();
       captionText = figCaption.text();
       photosArray = $("section div img");
@@ -298,7 +303,8 @@ $(document).ready(function() {
     $(".lightbox").remove();
     boxOutput = "";
     if (imgIndex < (photosArray.length - 1)) {
-      url = $(photosArray[imgIndex + 1]).attr("data-original");
+      fullUrl = $(photosArray[imgIndex + 1]).attr("data-original");
+      url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
       captionText = $(captionArray[imgIndex + 1]).text();
       imgLocation();
       lightbox();
@@ -314,7 +320,8 @@ $(document).ready(function() {
     boxOutput = "";
 
     if (imgIndex > 0) {
-      url = $(photosArray[imgIndex - 1]).attr("data-original");
+      fullUrl = $(photosArray[imgIndex - 1]).attr("data-original");
+      url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
       captionText = $(captionArray[imgIndex - 1]).text();
       imgLocation();
       lightbox();
