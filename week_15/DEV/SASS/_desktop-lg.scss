@@ -11,4 +11,10 @@
       width: (225 / 1600) * 100%;
     }
   }
+  .lightbox {
+    img {
+      height: 85%;
+      width: auto;
+    }
+  }
 }

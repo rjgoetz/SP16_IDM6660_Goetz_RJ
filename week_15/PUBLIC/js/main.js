@@ -243,16 +243,6 @@ $(document).ready(function() {
 
   };
 
-  function boxPosition() {
-
-    imgHeight = $("body > div img").height();
-    boxHeight = $(window).height();
-    topPosition = ((boxHeight - imgHeight) / 2);
-
-    $("body > div").css("padding-top", topPosition);
-
-  };
-
   function imgLocation() {
 
     var urlArray = [];
@@ -273,10 +263,7 @@ $(document).ready(function() {
     $("section div").on("click", "img", function() {
 
       fullUrl = $(this).attr("data-original");
-      console.log(fullUrl);
       url = fullUrl.substring(0, (fullUrl.length - 8)) + ".jpg";
-      console.log(url);
-      // url = $(this).attr("data-original");
       figCaption = $(this).next();
       captionText = figCaption.text();
       photosArray = $("section div img");
@@ -284,7 +271,6 @@ $(document).ready(function() {
 
       imgLocation();
       lightbox();
-      boxPosition();
 
     })
 
@@ -329,6 +315,13 @@ $(document).ready(function() {
     }
 
   });
+
+  // // // // // // // // // // //
+  // click logo to reset to "All" filter
+  $("h1").click(function() {    
+    $("input[value='all']").prop("checked", true);
+    getData();
+  })
 
 
   // // // // // // // // // // //
