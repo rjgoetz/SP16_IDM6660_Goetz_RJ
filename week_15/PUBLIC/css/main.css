@@ -2298,6 +2298,9 @@ section:after,
   h2,
   h3 {
     page-break-after: avoid; } }
+html {
+  overflow-y: scroll; }
+
 body {
   background: #fcfcfc; }
 
