@@ -187,5 +187,68 @@
     "tags" : ["smiling"],
     "src" : "img/harold37",
     "layout" : "portrait"
+  },
+  {
+    "name" : "Too Big For My Basket",
+    "photoDate" : "2015-06-14",
+    "tags" : ["milestone"],
+    "src" : "img/harold38",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Future Programmer",
+    "photoDate" : "2015-06-16",
+    "tags" : ["playing"],
+    "src" : "img/harold39",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "First Swim",
+    "photoDate" : "2015-06-21",
+    "tags" : ["milestone", "playing"],
+    "src" : "img/harold40",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "4th of July Boating",
+    "photoDate" : "2015-07-03",
+    "tags" : ["dad"],
+    "src" : "img/harold41",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Dapper with Mom",
+    "photoDate" : "2015-07-10",
+    "tags" : ["mom"],
+    "src" : "img/harold42",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Hanging Out With Dad",
+    "photoDate" : "2015-07-12",
+    "tags" : ["dad"],
+    "src" : "img/harold43",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Sailing the Seas!",
+    "photoDate" : "2015-07-18",
+    "tags" : ["mom"],
+    "src" : "img/harold44",
+    "layout" : "landscape"
+  },
+  {
+    "name" : "Loving the Sand",
+    "photoDate" : "2015-07-18",
+    "tags" : ["smiling", "playing"],
+    "src" : "img/harold45",
+    "layout" : "portrait"
+  },
+  {
+    "name" : "Slide Time",
+    "photoDate" : "2015-07-30",
+    "tags" : ["playing", "mom"],
+    "src" : "img/harold46",
+    "layout" : "portrait"
   }
 ]
